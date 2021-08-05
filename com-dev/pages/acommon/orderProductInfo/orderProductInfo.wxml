@@ -1,0 +1,91 @@
+<wxs src="../../../utils/filter.wxs" module="util"></wxs>
+<view class="infoWrap">
+  <view class="infoUL">
+    <!-- 头部 -->
+        <view class="topWrap">
+            <view class="oneItemWrap" catchtap="productSwitchFun">
+                  <view class="oneItem">{{newOrderProduct.categoryName}}</view>
+                  <view class="{{newOrderProduct.checked?'openStyle':'closeStyle'}}"></view>
+            </view>
+            <view class="twoItem">
+              <view class="number">{{newOrderProduct.sum}}</view>
+              <view>件</view>
+            </view>
+            <view class="threeItem">
+                <view>约</view>
+                <view class="number">{{newOrderProduct.allWeight}}</view>
+                <view>克</view>
+            </view>
+            <!-- <view class="fourItem">
+                <view>约</view>
+                <view class="number">{{newOrderProduct.price}}</view>
+                <view>元</view>
+            </view> -->
+        </view>
+    <!-- 产品项 -->
+        <view hidden="{{!(newOrderProduct.checked)}}" class="infoLIWrap" wx:for="{{newOrderProduct.orderProduct}}" wx:key="index">
+            <view class="infoLI">
+                <view class="imgWrap" data-item="{{item}}" catchtap="goDetail"><image src="{{$img + item.productImg}}" mode="widthFix"></image></view>
+                <view class="desWrap">
+                      <view class="topProductWrap">
+                            <view class="pName" data-item="{{item}}" catchtap="goDetail">
+                            {{util.limitWordNumber(item.productName,18)}}</view>
+                            <view class="pNumber" data-item="{{item}}" catchtap="goDetail">商品编号： {{item.productNo}}</view>
+                      </view>
+                      <view class="bottomProductWrap">
+                            <!-- <view class="pCost">工费： ≈ {{item.price}}</view> -->
+                            <view></view>
+                            <view class="pTotal" data-index="{{index}}" catchtap="skuSwitchFun">
+                                <view>共 {{item.sum}} 件</view>
+                                <view class="arrowWrap">
+                                    <image src="/images/me/iconOneChecked.png" style="width: 20rpx; height: 14rpx"  hidden="{{!(item.checked)}}"></image>
+                                    <image src="/images/me/iconOne.png" style="width: 14rpx; height: 20rpx"  hidden="{{item.checked}}"></image>
+                                </view>
+                            
+                            </view>
+                      </view>
+                </view>
+             
+            </view>
+            <!-- 底部线 -->
+              <view class="lineWrap">
+                  <view class="bottomLine"></view>
+              </view>
+             
+            <!-- sku数据 -->
+            <view class="skuWrap" hidden="{{!(item.checked)}}">
+                <view class="skuTable">
+                     <view class="skuTh">
+                        <view>单件重/g</view>
+                        <view wx:if='{{item.styleKey === "diameterLength"}}'>圈口(cm)</view>
+                        <view wx:elif='{{item.styleKey === "length"}}'>链长(cm)</view>
+                        <view wx:elif='{{item.styleKey === "ringHand"}}'>手寸(cm)</view>
+                        <view>总重/g</view>
+                        <view>总数量</view>
+                     </view>
+                     <view  wx:for="{{item.orderBigSinglePropertyFroms}}" wx:for-index="idx" wx:for-item="itemSku" wx:key="idx">
+                        <view class="skuTr">
+                            <view>{{itemSku.standardGold}}</view>
+                            <view wx:if='{{item.styleKey === "diameterLength"}}'>{{itemSku.extendAttr.diameterLength}}</view>
+                            <view wx:elif='{{item.styleKey === "length"}}'>{{itemSku.extendAttr.length}}</view>
+                            <view wx:elif='{{item.styleKey === "ringHand"}}'>{{itemSku.extendAttr.ringHand}}</view>
+                            <view>{{itemSku.allWeight}}</view>
+                            <view>{{itemSku.orderSum}}</view>
+                        </view>
+                        <view class="remarksWrap" wx:if="{{itemSku.productRemarks}}">
+                          <view class="remarkTitel">备注：</view>
+                          <view class="remarkCont">{{itemSku.productRemarks}}</view>
+                        </view>
+                     </view>
+
+                </view>
+            
+            </view>
+
+        </view>
+
+
+
+        
+  </view>
+</view>

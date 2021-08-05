@@ -1,0 +1,71 @@
+var format = function (text) {
+  if (!text) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  return text.replace(reg, '\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+//内容省略
+var limitWordNumber = function (data, len) {
+  if (data.length > len) {
+    var str = data.substring(0, len) + '...';
+    return str;
+  } else {
+    return data
+  }
+
+}
+
+
+var getCurrent = function (arr, index) {
+  var result = arr.indexOf(index);
+  return result;
+};
+
+//补零
+var prefixNum = function (index) {
+  var num = index + 1
+  if (num < 10) {
+    return '0' + num;
+  } else {
+    return num;
+  }
+
+}
+
+//日期格式：1月21日
+var formatDate = function (dt) {
+  var time = getDate(dt);
+  var moth = time.getMonth() + 1;
+  var date = time.getDate();
+  return moth + '月' + date + '日'
+}
+
+// 日期格式：2019年2月20 下午3：30
+var formatDateTwo = function (dt) {
+  var data = getDate(dt);
+  var dateArray = data.toLocaleDateString().split("/");
+  var timeArray = data.toLocaleTimeString().split(":");
+
+  return dateArray[0] + '年' + dateArray[1] + '月' + dateArray[2] + '日' + ' ' + timeArray[0] + ' : ' + timeArray[1]
+
+}
+
+
+//997换成了足金
+var condition997 = function(val){
+  var str = val.replace("997", "足金");
+  return str
+}
+
+
+module.exports = {
+  format: format,
+  limitWordNumber: limitWordNumber,
+  getCurrent: getCurrent,
+  prefixNum: prefixNum,
+  formatDate: formatDate,
+  formatDateTwo: formatDateTwo,
+  condition997: condition997
+};

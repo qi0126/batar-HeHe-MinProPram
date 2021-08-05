@@ -1,0 +1,54 @@
+/* 按钮  */
+
+.btn {
+  padding: 0;
+  color: #999;
+  background: white;
+  font-size: 28rpx;
+  border: 1px solid #e6e6e6;
+  width: 250rpx;
+  border-radius: 0rpx;
+}
+
+.btn.disabled {
+  color: #999;
+  background: #e6e6e6;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn:active {
+  opacity: 0.8;
+}
+
+.btn-default {
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 98rpx;
+  color: white;
+  border-radius: inherit;
+  background: #000;
+  border: none;
+}
+
+.btn-class1 {
+  width: 160rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+  background: #e86800;
+  border-radius: 30rpx;
+}
+
+.btn-class2 {
+  width: 140rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #e86800;
+  font-size: 24rpx;
+  border: 1px solid #e86800;
+  border-radius: 30rpx;
+}

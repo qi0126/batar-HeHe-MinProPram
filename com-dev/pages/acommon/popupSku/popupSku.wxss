@@ -1,0 +1,162 @@
+@import '/styles/btn.wxss';
+@import '/styles/crease.wxss';
+
+.addr-wrap {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  /* background: red; */
+
+}
+
+.scroll-wrap {
+  height: 1500rpx;
+}
+
+.con-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 16rpx 16rpx 0 0;
+}
+
+.con-wrap-nomal {
+  height: 10rpx;
+}
+
+.addr-con {
+  height: 100%;
+}
+
+.tit {
+  display: flex;
+  padding: 10rpx 20rpx;
+  padding-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.proimg > image {
+  width: 150rpx;
+  height: 150rpx;
+  background: rebeccapurple;
+}
+
+.txtwrap {
+  margin-left: 30rpx;
+}
+
+.txtbt {
+  margin-top: 36rpx;
+  width: 480rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.txtno {
+  margin-top: 18rpx;
+  width: 480rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: #999
+}
+
+.t-left {
+  display: flex;
+}
+
+.t-left > view {
+  padding: 0 20rpx;
+  margin-right: 40rpx;
+}
+
+.t-left > view:first-child {
+  margin-left: -20rpx;
+}
+
+.item {
+  line-height: 98rpx;
+}
+
+.list {
+  height: 100%;
+  background: #fff;
+}
+
+.remark {
+
+}
+
+.remark-tit {
+  margin-left:24rpx;
+  margin-bottom:20rpx;
+  margin-top:10rpx;
+}
+
+.textarea {
+  width:680rpx;
+  height:130rpx;
+  padding:10rpx;
+  font-size:24rpx;
+  border:1px solid #e6e6e6;
+  margin-top:20rpx;
+  margin:0 auto;
+}
+
+
+.bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  z-index: 3
+}
+
+.b-bottom {
+  height: 98rpx;
+  display: flex;
+}
+
+.b-bottom > button {
+  line-height: 98rpx;
+}
+
+.bb-left {
+  width: 98rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-top: 1px solid #e6e6e6
+}
+
+.bb-con {
+  width: 326rpx;
+  color: #333;
+  background: #e6e6e6;
+}
+
+.bb-right {
+  flex: 1
+}
+
+.new-up-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 100rpx;
+  background: #fff;
+  border-top: 1rpx solid #e6e6e6
+}
+
+.nuw-txt {
+    color: #A71C20;
+    font-size: 28rpx;
+}

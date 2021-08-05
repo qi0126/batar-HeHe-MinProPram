@@ -1,0 +1,26 @@
+<view class='order'>
+  <view class='tab'>
+    <view class='{{orderStatus === "1" ? "active": ""}}' data-status='1' catchtap='changeStatusClick'>待审核</view>
+    <view class='{{orderStatus === "2" ? "active": ""}}' data-status='2' catchtap='changeStatusClick'>已通过</view>
+    <view class='{{orderStatus === "3" ? "active": ""}}' data-status='3' catchtap='changeStatusClick'>已取消</view>
+    <view class='{{orderStatus === "4" ? "active": ""}}' data-status='4' catchtap='changeStatusClick'>未通过</view>
+  </view>
+
+  <!-- 订单列表 -->
+  <order-product wx:for="{{list}}" wx:key="index" productData="{{item}}" bind:goOrderDetail="goOrderDetail" bind:cancelOrder="cancelOrderClick"></order-product>
+
+  <view class='loadmore' hidden='{{list.length < 10}}'>
+    <view class="loading_box" hidden="{{loadMore}}">
+      <view class="loading_rotate_cube_parent">
+        <view class="loading_rotate_cube"></view>
+      </view>
+    </view>
+    <text hidden="{{!loadMore}}">没有更多数据了</text>
+  </view>
+
+  <view class='nothing' hidden='{{list.length !== 0}}'>
+    <image src='/images/me/img-noorder.png' mode='widthFix' style='width: 170rpx; margin-top: 240rpx; margin-bottom: 60rpx'></image>
+    <view>~ 亲，暂无订单 ~</view>
+  </view>
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "order-product-info": "/pages/acommon/orderProductInfo/orderProductInfo",
+    "proList": "/pages/acommon/proList/proList"
+  }
+}

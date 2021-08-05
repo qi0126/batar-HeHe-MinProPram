@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "batar-dialog": "/pages/acommon/dialog/dialog"
+    }
+}

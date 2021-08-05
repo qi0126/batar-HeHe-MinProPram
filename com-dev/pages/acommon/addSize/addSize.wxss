@@ -1,0 +1,249 @@
+
+.slideh {
+  height: 100vh
+}
+
+.shopCartWarp {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  top: 0;
+  left: 0;
+  margin-bottom: 100rpx;
+}
+
+.shopCartWarp .shopCartcontentWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  position: relative;
+} 
+
+.shopCartcontentWrap .icon-close{
+  width:31rpx;
+  height:31rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 28rpx;
+}
+
+/* 加入购物车内容 */
+.shopCartcontent{
+  padding: 48rpx 27rpx 96rpx 27rpx
+}
+
+.productDes{
+  display: flex;
+  margin-bottom: 96rpx;
+}
+
+.productDes .imgWrap{
+  width: 150rpx;
+  height: 150rpx;
+  background: #F9F9F9;
+  margin-right: 26rpx;
+}
+
+.imgWrap > image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 文字描述 */
+.wordsWrap{
+  display: flex;
+  flex-direction: column;
+  font-size:26rpx;
+  justify-content: center;
+
+}
+
+.wordsWrap .itemOne{
+  display: flex;
+  font-family:ADAMCGPRO;
+  color:rgba(51,51,51,1);
+  margin-bottom: 17rpx;
+}
+
+.wordsWrap .itemTwo{
+  display: flex;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  
+}
+
+.itemOne .left{
+  font-family:ADAMCGPRO;
+  color:rgba(51,51,51,1);
+}
+
+.itemTwo .left{
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+
+/* 产品sku */
+.scroll-wrap {
+  height: 600rpx;
+  /* background: red; */
+}
+
+.skuListWrap {
+  height: 100%;
+  background: #fff;
+}
+
+.skuList{
+  margin-bottom: 90rpx;
+}
+
+.skuList .skuName{
+  font-size:26rpx;
+  font-family:PingFangSC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+}
+
+.skuItemWrap{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.skuItemWrap .skuItem{
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:300;
+  color:rgba(0,0,0,1);
+  height:51rpx;
+  border:1rpx solid rgba(198,198,198,1);
+  margin-right: 30rpx;
+  padding: 6rpx 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rpx;
+  
+}
+
+.skuItem.activity{
+  border:2rpx solid rgba(232,104,0,1);
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:300;
+  color:rgba(232,104,0,1);
+}
+
+/* 底部 */
+.footerWrap{
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.totalWrap{
+  height:111rpx;
+  box-shadow:0rpx 0rpx 4rpx 0rpx rgba(16,46,115,0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 14rpx 0rpx 28rpx;
+}
+
+.totalNum{
+  font-size:32rpx;
+  font-family:PingFangSC;
+  font-weight:500;
+  color:rgba(232,104,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.totalNum .num{
+  font-size:40rpx;
+  font-family:STSongti-SC;
+  font-weight:400;
+  color:rgba(232,104,0,1);
+}
+
+
+.SymbolWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SymbolWrap .operation{
+  font-size:38rpx;
+  font-family:Montserrat;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  width:234rpx;
+  height:64rpx;
+  border:1rpx solid rgba(55,55,55,1);
+  display: flex;
+  align-items: center;
+}
+
+.SymbolWrap .reduce{
+  border-right: 1rpx solid #979797;
+  height:64rpx;
+  flex: 1;
+  text-align: center;
+}
+.SymbolWrap .number{
+  border-right: 1rpx solid #979797;
+  height:64rpx;
+  flex: 1;
+  text-align: center;
+  line-height: 64rpx;
+}
+.SymbolWrap .plus{
+  flex: 1;
+  text-align: center;
+}
+.SymbolWrap .company{
+  margin-left: 11rpx;
+  height:64rpx;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+/* 按钮 */
+.btnWrap{
+  color:rgba(255,255,255,1);
+  font-family:PingFangSC-Regular;
+  display: flex;
+}
+
+.btnWrap .leftBtn{
+  height: 96rpx;
+  width: 470rpx;
+  background:rgba(51,51,51,1);
+  font-size:32rpx;
+  font-weight:500;
+}
+
+.btnWrap .rightBtn{
+  height: 96rpx;
+  width: 280rpx;
+  background:rgba(225,117,29,1);
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+
+}
+
+.btnWrap .btnDef{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

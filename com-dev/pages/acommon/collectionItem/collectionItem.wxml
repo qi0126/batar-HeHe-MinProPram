@@ -1,0 +1,18 @@
+<wxs src="../../../utils/filter.wxs" module="util"></wxs>
+<view class="itemWrap">
+<!--  图片文字 -->
+  <view class="pictureText">
+     <view class="imgWrap">
+        <image src="{{$img + productData.pic}}" mode="widthFix"></image>
+    </view>
+     <view class="desWrap">
+        <!-- <view class="title">{{productData.proName}}</view> -->
+         <view class="title">{{productData.proName?util.limitWordNumber(productData.proName,19):''}}</view>
+        <view class="number">商品编号：{{productData.batarNum}}</view>
+     </view>
+  </view>
+  <view class="btnWrap">
+     <view class="btn" data-batarNum="{{productData.batarNum}}" catchtap="cancelCollect">取消收藏</view>
+  </view>
+ 
+</view> 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创建地址",
+  "usingComponents": {
+    "batar-address": "/pages/acommon/address/address"
+  }
+}

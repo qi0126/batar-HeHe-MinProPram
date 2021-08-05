@@ -1,0 +1,27 @@
+<view class="card" catchtap="goDetail">
+    <view class="leftCard">
+        <image src="{{$img+info.imgUrl}}" style="width:218rpx; height:146rpx;"></image>
+    </view>
+
+    <view class="rightCrad">
+        <view class="des">{{info.title}}</view>
+        <view class="cardIcon">
+            <view class="cardIcon-txt">
+                <view class="cardIcon-txt_left" catchtap="goDiscuss">
+                    <text class="font_family icon-ziyuan1 Icon1"></text>
+                    <text class="des1">{{info.comment}}</text>
+                </view>
+
+                <view class="cardIcon-txt_right" catchtap="like">
+                    <text class="font_family icon-ziyuan Icon3" wx:if="{{info.flag === 0}}"></text>
+                    <text class="font_family icon-ziyuan Icon2" wx:else></text>
+                    <text class="des2">{{info.like}}</text>
+                </view>
+            </view>
+            <view>
+                <!-- <text class="font_family icon-fenxiang"></text> -->
+            </view>
+
+        </view>
+    </view>
+</view>

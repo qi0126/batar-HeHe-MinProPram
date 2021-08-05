@@ -1,0 +1,80 @@
+page {
+  background: #fff
+}
+
+.top {
+  padding: 0 34rpx 0 43rpx;
+  border-top:1rpx solid rgba(220,220,220,1);
+}
+
+.col {
+  padding-top: 54rpx;
+  position: relative;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.col > text {
+  min-width: 150rpx;
+  margin-right: 10rpx;
+}
+
+.col > input {
+  display: block;
+  padding: 0 40rpx;
+  background: #fff
+}
+
+
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.right-addr {
+  flex: 1
+}
+
+.arrow {
+  /* background: red */
+}
+
+.edit-default {
+  margin-top: 45rpx;
+  padding-right: 43rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;  
+}
+
+.edit-default > image {
+  margin-right: 20rpx
+}
+
+button {
+  position: fixed;
+  bottom: 0
+}
+
+.def-city {
+  color: #999
+}
+
+/* 点击获取手机号 */
+.get-phone {
+  position:relative;
+  margin:0;
+  background:none;
+  padding:0;
+  width:inherit;
+}
+.inpWidth{
+  width:500rpx;
+}

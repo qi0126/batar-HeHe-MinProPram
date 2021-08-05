@@ -1,0 +1,40 @@
+/* 搜索(搜索页面) begin */
+
+.sear-con {
+  box-sizing: border-box;
+  height: 88rpx;
+  padding: 0 40rpx;
+  background: #fff;
+}
+
+.sear {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50rpx;
+  background: #f5f5f5;
+}
+
+.sear-place {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.sear > input {
+  flex: 1;
+  font-size: 24rpx;
+  color: #333;
+  height: 60rpx;
+}
+
+.sear > image {
+  margin: 0 24rpx;
+}
+
+.sear-con > text {
+  padding-left: 40rpx;
+  color: #333;
+}
+
+/* 搜索 end */

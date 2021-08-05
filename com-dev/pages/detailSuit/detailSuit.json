@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "产品详情",
+  "usingComponents": {
+    "batar-prop": "/pages/acommon/prop/prop",
+    "batar-blank": "/pages/acommon/blank/blank",
+    "batar-popupSku": "/pages/acommon/popupSku/popupSku"
+  }
+}

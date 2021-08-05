@@ -1,0 +1,16 @@
+    <view class="modal-box" catchtap="hideModal">
+      <view class="modal-body">
+        <view class="modal-content">
+          <view class="modalOne">
+            <view class="modalTop">
+              <span class="fontWeightBold">{{clerkName}}</span>真诚为您服务
+              <view class="modalTxtOne">Tel:{{clerkPhoneNum}}</view>
+            </view>
+            <view class="modalBottom">
+              <view class="bottomLeft" bindtap="hideModal">暂不咨询</view>
+              <view class="bottomRight" bindtap="openClerk">拨打电话</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>

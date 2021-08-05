@@ -1,0 +1,30 @@
+<view class='collect'>
+  <view wx:if="{{result.rowSize > 0}}">
+    <!-- 搜索 -->
+    <view class="searchWrap">
+        <view class="analogInput" catchtap="goCollectSearch">
+            <image src="/images/index/searchIcon.png" style='width: 28rpx; height: 28rpx' ></image>
+            <view class="des">搜索您收藏的产品</view>
+        </view>
+    </view>
+
+    <!-- 产品 -->
+    <collectionItem wx:for="{{list}}" wx:key="id" data-item="{{item}}" productData="{{item}}" bind:cancelCollect="slideCollect" catchtap="goDetail"></collectionItem>
+
+    <view class='loadmore' hidden='{{list.length <= 4}}'>
+      <view class="loading_box" hidden="{{loadMore}}">
+        <view class="loading_rotate_cube_parent">
+          <view class="loading_rotate_cube"></view>
+        </view>
+      </view>
+      <text hidden="{{!loadMore}}">没有更多数据了</text>
+    </view>
+  </view>
+
+  <view class='nothing' wx:else>
+    <image src='/images/me/img-nocollect.png' mode='widthFix' style='width: 170rpx; margin-top: 360rpx; margin-bottom: 60rpx'></image>
+    <view>~ 亲，暂无心爱的收藏商品 ~</view>
+  </view>
+
+  <!-- <image class='backtop' wx:if="{{floorstatus}}" src='/images/icon-up.png' catchtap='backTop'></image> -->
+</view>

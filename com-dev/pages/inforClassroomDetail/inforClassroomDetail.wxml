@@ -1,0 +1,25 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+
+<view>
+  <template is="wxParse" data="{{wxParseData: article.nodes}}" />
+</view>
+
+    <view class="footer">
+        <view class="leftWrap" bindtap="goDiscuss">
+            <text class="font_family icon-ziyuan1 Icon1"></text>
+            <text class="des1">评论</text>
+        </view>
+
+        <view class="rightWrap" catchtap="thumbsUp">
+            <text class="font_family icon-ziyuan Icon3" wx:if="{{info.flag === 0}}" ></text>
+            <text class="font_family icon-ziyuan Icon2" wx:else ></text>
+            <text class="des2" >赞</text>
+        </view>
+    </view>
+
+
+    
+<!-- 返回首页 -->
+<button open-type="share" class='backHome' >
+  <view class='font_family icon-fenxiang'></view>
+</button>

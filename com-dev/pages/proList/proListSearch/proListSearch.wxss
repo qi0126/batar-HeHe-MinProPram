@@ -1,0 +1,100 @@
+
+
+.classifly{
+  background:rgba(249,249,249,1);
+  height: 100%;
+}
+
+.classiflyUL{
+  /* border-top:1rpx solid rgba(227,227,227,1); */
+  padding: 0rpx 14rpx 210rpx 16rpx;
+  height: 100%;
+}
+
+
+.classiflyLi{
+  padding: 44rpx 0rpx 29rpx 18rpx;
+  border-top:1rpx solid rgba(227,227,227,1);
+
+}
+
+.classiflyLi:first-child{
+  border-top:0rpx;
+}
+
+
+.classiflyTitle{
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  margin-bottom: 31rpx;
+}
+
+.classiflyItemWrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.classiflyItem{
+  width:174rpx;
+  /* height:73rpx; */
+  border:1rpx solid rgba(198,198,198,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  margin:0rpx 15rpx 11rpx 0rpx;
+  padding: 16rpx 20rpx 11rpx 20rpx;
+  text-align: center;
+
+}
+
+.classiflyItem.activity{
+  border:2rpx solid rgba(232,104,0,1);
+  color:rgba(232,104,0,1);
+}
+
+/* 按钮 */
+.btnWrap{
+  padding-top:16rpx;
+  background:rgba(249,249,249,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:500;
+  display: flex;
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 2;
+  height: 104rpx;
+}
+
+.btnReset{
+  width:267rpx;
+  height:88rpx;
+  border:1rpx solid rgba(0,0,0,1);
+  border-radius: 0%;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.btnConfirm{
+  color:rgba(255,255,255,1);
+  width:428rpx;
+  height:90rpx;
+  background:#E1751D;
+  border-radius: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: bold;
+}

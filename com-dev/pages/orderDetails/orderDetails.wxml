@@ -1,0 +1,88 @@
+<view class="orderDetaiWrap">
+    <!-- 订单状态 -->
+    <view class="orderState">
+        <view class="imgWrap">
+            <image src="/images/me/shizhong.png" mode="widthFix" wx:if="{{orderDetailsData.orderStatus == 1}}"></image>
+            <image src="/images/me/wait.png" mode="widthFix" wx:else></image>
+        </view>
+        <view class="state" wx:if="{{orderDetailsData.orderStatus == 1}}">待审核</view>
+        <view class="state" wx:elif="{{orderDetailsData.orderStatus == 2}}">已通过</view>
+        <view class="state" wx:elif="{{orderDetailsData.orderStatus == 3}}">已取消</view>
+        <view class="state" wx:elif="{{orderDetailsData.orderStatus == 4}}">未通过</view>
+    </view>
+    <!-- 订单信息 -->
+    <view class="ordeInfo">
+        <view class="title">订单信息</view>
+        <view class="orderList">
+            <view class="left">订单编号</view>
+            <view class="right">{{orderDetailsData.orderNo}}</view>
+        </view>
+
+        <view class="orderList">
+            <view class="left">下单日期</view>
+            <view class="right">{{orderDetailsData.orderCreateTime}}</view>
+        </view>
+
+        <view class="orderList">
+            <view class="left">收货信息</view>
+            <view class="right">
+                <view>{{orderDetailsData.addressUser}}</view>
+                <view class="tel">{{orderDetailsData.addressTel}}</view>
+                <view>{{orderDetailsData.address}}</view>
+            </view>
+        </view>
+
+        <view class="orderList" wx:if="{{orderDetailsData.orderComeTime}}">
+            <view class="left">到货日期</view>
+            <view class="right">{{orderDetailsData.orderComeTime}}</view>
+        </view>
+
+        <!-- <view class="orderList">
+          <view class="left">字印添加</view>
+          <view class="right">{{orderDetailsData.marking}}</view>
+      </view>
+
+      <view class="orderList">
+          <view class="left">挂带标签</view>
+          <view class="right">{{orderDetailsData.lableName == 2? '是' : '否'}}</view>
+      </view> -->
+
+        <view class="orderList" wx:if="{{orderDetailsData.orderRemarks}}">
+            <view class="left">备注信息</view>
+            <view class="right">{{orderDetailsData.orderRemarks}}</view>
+        </view>
+
+    </view>
+
+    <!-- 商品信息 -->
+    <view class="shop_txt">
+        <view class="topLine width90 marginCenter">
+            <image src='/images/shop/icon-cartFour.png' mode='widthFix' style='width: 40rpx;height:40rpx;margin-right:20rpx;'></image>
+            #商品信息
+        </view>
+    </view>
+    <proList list="{{list}}"></proList>
+
+    <!-- 底部合计 -->
+    <view class="footerWrap">
+        <!-- 合计 -->
+        <view class="totalWrap">
+            <view class="leftTotal">
+                <view class="leftWeigth">预计总克重</view>
+                <view>{{orderDetailsData.endOrderTotalWeight}}g</view>
+            </view>
+            <view class="rightTotal">共 {{orderDetailsData.orderTotalSum}} 件商品</view>
+        </view>
+        <!-- 按钮 -->
+        <view class="btnWrap" wx:if="{{orderDetailsData.orderStatus == 1}}">
+            <view class="costWrap">
+                <!-- <view class="costTitle">预计总工费</view>
+                <view class="f32 ">¥ {{orderDetailsData.endOrderTotalMoney}}</view> -->
+            </view>
+            <view class="cancelBtn" wx:if="{{orderDetailsData.orderStatus == 1}}" data-orderNo="{{orderDetailsData.orderNo}}" catchtap="cancelOrderClick">取消订单</view>
+            <!-- <view class="cancelBtn" wx:if="{{orderDetailsData.orderStatus == 3}}" data-orderNo="{{orderDetailsData.orderNo}}" catchtap="reOrderFun">重新下单</view> -->
+        </view>
+
+    </view>
+
+</view>

@@ -1,0 +1,182 @@
+<view class="patrolShopWrap">
+  <navigaBar navBarTxt="巡店报告"></navigaBar>
+  <view wx:if="{{shopTF === 1}}">
+    <view class="shopReportTopOne">
+      <view class="txt36 txtBold">{{shopReportData.storeName}}</view>
+      <view class="displayFlex">
+        <view class="left30">主访人</view>
+        <view class="right70">
+          {{shopReportData.userName || '-'}}
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="left30">陪同人</view>
+        <view class="right70" bindtap="modalTap">
+          {{shopReportData.esUserNameD.userNames || '-'}}
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="left30">巡店时间</view>
+        <view class="right70" bindtap="modalTap">
+          <span wx:if="{{shopReportData.storeStartTime}}">
+            {{shopReportData.storeStartTime}}~{{shopReportData.storeEndTime}}
+          </span>
+          <span wx:if="{{!shopReportData.storeStartTime}}">
+            -
+          </span>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 巡店动态内容 -->
+    <view wx:for="{{shopReportData.reportDataList}}"  wx:for-item="item" wx:for-index="oneIndex">
+      <view class="titleOne" wx:if="{{item.datalist.length > 0}}">
+        <span class="titOne">
+          {{item.name}}
+          <span class="txtYellow">({{item.score}}/{{item.fullMark}})</span>
+        </span>
+      </view>
+      
+      <view class="shopReportTopOne" wx:if="{{item.datalist.length > 0}}">
+        <view wx:for="{{item.datalist}}" wx:for-item="ielem" class="lineBottom" wx:for-index="twoIndex">
+          <view class="displayFlex">
+            <view class="right70">
+              <span wx:if="{{ielem.content.length <= 17}}">{{ielem.contentD}}</span>
+              <span wx:if="{{ielem.content.length > 17}}">
+                <view data-txt="{{ielem.content}}" catchtap="toast1Tap">
+                  {{ielem.contentD}}...<span class="txtRed txtBold">更多</span>
+                </view>
+              </span>
+            </view>
+            <view class="left30One txtRight" >
+              <image src="/images/starRed.png" class="starIcon"  wx:for="{{ielem.result}}"></image>
+            </view>
+          </view>
+          <!-- 图片展示 -->
+          <view class="displayInBlock" style="width:100%;" wx:if="{{ielem.imgList.length > 0}}" >
+            <view class="overflowHidden">
+              <view class="fileUploadOne" wx:for="{{ielem.imgList}}" wx:for-item="kelem">
+                <image src="{{kelem}}" class="fileUploadOne" bindtap="openImg" data-item="{{kelem}}" data-oneIndex="{{oneIndex}}" 
+                data-twoIndex="{{twoIndex}}"/>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="titleOne">
+      <span class="titOne">
+        其他问题及情况
+      </span>
+    </view>
+    <view>
+      <view class="item">
+        <view class="txtHui">
+          周边市场情况
+        </view>
+        <view class="txtBlack ">
+          {{shopReportData.rimCondition || '-'}}
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          培训内容
+        </view>
+        <view class="txtBlack ">
+          {{shopReportData.trainContent || '-'}}
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          参与培训人员数量
+        </view>
+        <view class="txtBlack">
+          {{shopReportData.trainNum || '-'}}人
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          店铺流量
+        </view>
+        <view class="txtBlack">
+          {{shopReportData.storeFlux || '-'}}人次
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          主要消费年龄段
+        </view>
+        <view class="txtBlack">
+          {{shopReportData.ageParagraph || '-'}}岁
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          营销活动内容
+        </view>
+        <view class="txtBlack">
+           {{shopReportData.marketing || '-'}}
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          产出金额
+        </view>
+        <view class="txtBlack">
+          ￥{{shopReportData.outputMoney || '-'}}
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          店铺支持
+        </view>
+        <view class="txtBlack">
+          {{shopReportData.needSupport || '-'}}
+        </view>
+      </view>
+      <view class="item">
+        <view class="txtHui">
+          提升建议
+        </view>
+        <view class="txtBlack">
+          {{shopReportData.liftSuggest || '-'}}
+        </view>
+      </view>
+    </view> 
+  </view>
+  <view wx:if="{{shopTF === 0}}">
+    <view class="shopReportTopOne">
+      <view class="txt36 txtBold">{{shopReportData.storeName || '-'}}</view>
+      <view class="displayFlex">
+        <view class="left30">主访人</view>
+        <view class="right70">
+          {{shopReportData.userName || '-'}}
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="left30">陪同人</view>
+        <view class="right70">
+          {{shopReportData.esUserNameD.userNames || '-'}}
+        </view>
+      </view>
+    </view>
+    <view class="textareaDiv">
+      <view class="txtHui">未到店原因</view>
+      <view class="txtBlack">
+        {{shopReportData.noStore || '-'}}
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view style="height: 130vh"></view> -->
+
+<view class='b-bottom' wx:if="{{shopReportData.storeStatus === 0}}">
+    <button class='btn btn-default feedback_btn' catchtap='goFeedback'>反馈</button>
+</view>
+<!-- <button class='btn btn-default feedback_btn' catchtap='goFeedback'>反馈</button> -->
+
+<patrolShopAssess info="{{shopReportData}}" bind:saveFeedback="saveFeedback" modalShow="{{modalShow}}" animationData="{{animationData}}"></patrolShopAssess>

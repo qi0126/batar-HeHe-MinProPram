@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 300,
+  "usingComponents": {
+      "top-seacrch": "/pages/acommon/topSearch/topSearch",
+      "infor-card": "/pages/acommon/inforCard/inforCard"
+  }
+}

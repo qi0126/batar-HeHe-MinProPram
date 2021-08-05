@@ -1,0 +1,119 @@
+/* .list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  padding-top: 20rpx; 
+} */
+
+/* .item {
+  width: 345rpx;
+  height: 100%;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+
+.item > image {
+  width: 345rpx;
+  height: 258rpx;
+} */
+
+
+/* 搜索 */
+.searchWrap{
+  height: 100rpx;
+  display: flex;
+}
+
+.analogInput{
+  width:596rpx;
+  height:64rpx;
+  background:rgba(238,238,238,1);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analogInput .des{
+  font-size:28rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(193,193,193,1);
+  margin-left: 11rpx;
+}
+
+
+
+.bottom {
+  padding: 20rpx 30rpx;
+  padding-top: 30rpx; 
+}
+
+.b-tit {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.b-info {
+  font-size: 24rpx;
+  color: #808080;
+  line-height: 1.8
+}
+
+.b-collect {
+  width: 100rpx;
+  float: right;
+  margin-top: 10rpx;
+}
+
+.backtop {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 20rpx;
+  opacity: .5
+}
+
+.backtop:active {
+  opacity: 1
+}
+
+.loadmore {
+  padding-bottom: 30rpx;
+}
+
+.nothing {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.top > view {
+  width: 100%;
+}
+
+.img-it {
+  position: relative;
+}
+
+.downxx {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.downxx > image {
+  width: 100%;
+}

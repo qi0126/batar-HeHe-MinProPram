@@ -1,0 +1,381 @@
+<view class='shoporderdetail'>
+
+    <view class="topTxt">
+        商品与配送
+    </view>
+
+    <view class='spd-address' catchtap='chooseAddress' wx:if='{{addr.receiver}}'>
+        <view class="topLine">
+            <image src='/images/shop/icon-cartTwo.png' mode='widthFix' style='width: 40rpx;height:40rpx;margin-right:20rpx;'></image>
+            #收货信息
+        </view>
+        <view class="displayFlex">
+            <view>
+                <view class='spda-name'>{{addr.receiver}}</view>
+                <view>{{addr.telephone}}</view>
+                <view class='spda-addr'>{{addr.province}}{{addr.city}}{{addr.district}}{{addr.address}}</view>
+            </view>
+            <view class='spda-img'>
+                <image src='/images/shop/icon-right.png' mode='widthFix' style='width: 20rpx'></image>
+            </view>
+        </view>
+    </view>
+
+    <view class='bottom newaddr' wx:else>
+        <button class='btn btn-default' bindtap='chooseAddress'>
+            +
+            <text>新建地址</text>
+        </button>
+    </view>
+
+    <view class='b-top'>
+        <view class="topLine width90 marginCenter">
+            <image src='/images/shop/icon-cartOne.png' mode='widthFix' style='width: 40rpx;height:40rpx;margin-right:20rpx;'></image>
+            #期望到货日期
+        </view>
+        <view class='bt-list bt-date'>
+            <view>
+                <view class="txtBold">请选择</view>
+                <br/>期望到货日期</view>
+            <picker mode="date" start='{{nowTime}}' value="{{date}}" bindchange="startDateEv">
+                <view class="picker">
+                    {{startDate}}
+                    <image src='/images/shop/icon-date.png' mode='widthFix' style='width: 30rpx'></image>
+                </view>
+            </picker>
+        </view>
+
+        <view class="top22">
+            <view class="topLine width90 marginCenter">
+                <image src='/images/shop/icon-cartFour.png' mode='widthFix' style='width: 40rpx;height:40rpx;margin-right:20rpx;'></image>
+                #备注信息
+            </view>
+
+            <view class='bt-listTwo'>
+                <view class='bt-reamrk' hidden="{{!remarkShow}}">
+                    <textarea class='word-input bw-right' placeholder='请输入备注' placeholder-class='def-place' bindinput='getRemark'></textarea>
+                </view>
+                <view class='bt-reamrk' hidden="{{remarkShow}}">
+                    <view class='word-input bw-right'></view>
+                </view>
+            </view>
+        </view>
+
+    </view> 
+
+    <view style='height: 10rpx;'></view>
+    <view class=" backfff">
+        <view class="topLine width90 marginCenter">
+            <image src='/images/shop/icon-cartFour.png' mode='widthFix' style='width: 40rpx;height:40rpx;margin-right:20rpx;'></image>
+            #商品信息
+        </view>
+    </view>
+    <!-- <scroll-view class='tab-panel' wx:if="{{tabList.length > 1}}" scroll-x='true'>
+        <view class='tabp-item {{item.checked && "tabp-on"}}' wx:for="{{tabList}}" wx:key="storeName" data-index='{{index}}' catchtap='checkTabPanel'>{{item.storeName}}</view>
+    </scroll-view> -->
+
+
+
+    <!-- 标准单下单begin -->
+    <view class='def-list batar-order' wx:if="{{dataType === 'def'}}">
+        <view wx:for="{{list}}" wx:for-index="iindex" wx:for-item="iitem">
+            <view>
+                <view class='cartcatelist' data-iindex='{{iindex}}' data-iindex='{{iindex}}' catchtap='defTitChecked'>
+                    <view class='ccl-left'>
+                        <!-- <image class='item-checkbox' src='{{iitem.checkbox ? imgStatus.a : imgStatus.b}}' style='width: 30rpx; height: 30rpx' data-iindex='{{iindex}}' data-iindex='{{iindex}}' catchtap='defTitCheckbox'></image> -->
+                        <view class='ccll-name'>
+                            <text class="fbold">{{iitem.one}}</text> {{iitem.productCs}} </view>
+                        <image src='{{iitem.checked ? imgTit.b : imgTit.a}}' mode='widthFix' style='width:{{iitem.checked ? "20rpx" : "12rpx" }}'></image>
+                    </view>
+                    <view class='ccl-right'>
+                        <view>{{iitem.number}}件</view>
+                        <view>约{{iitem.allWeight}}克</view>
+                        <!-- <view>约{{iitem.price}}元</view> -->
+                    </view>
+                </view>
+
+                <view class='def-item touch-item {{item.isTouchMove ? "touch-move-active" : ""}}' data-iindex='{{iindex}}' data-index='{{index}}' bindtouchstart="touchstart" bindtouchmove="touchmove" wx:key='id' wx:if="{{iitem.checked}}" wx:for-index="index" wx:for-item="item"
+                    wx:for="{{iitem.proList}}">
+
+                    <view class='di-top content'>
+                        <view class='dit-info  item-wrap'>
+                            <view class='diti-label itemw-left'>
+                                <!-- <image class='item-checkbox' src='{{item.checkbox ? imgStatus.a : imgStatus.b}}' style='width: 30rpx; height: 30rpx; flex-shrink: 0' data-iindex='{{iindex}}' data-index='{{index}}' catchtap='defCheckbox'></image> -->
+                                <view class='item-pro'>
+                                    <image src='{{$img + item.prourl}}' wx:if='{{item.prourl}}' style='width: 160rpx ;margin-top:10rpx' mode='widthFix' >
+                                    </image>
+                                </view>
+
+                                <!-- <image class='item-pro' src='/images/img-nothing.png' wx:else style='width: 160rpx; height: 120rpx;'></image> -->
+
+                                <view class='diti-info' style="width:100%;padding-right:20rpx;">
+
+                                    <view class='item-tit'>{{item.proName}}</view>
+                                    <view class='item-code'>编码：{{item.proNo}}</view>
+                                    <!-- <view class='item-detail' wx:if="{{item.suit === 1}}">{{util.condition997(item.productCZ)}}</view> -->
+                                    <view class='ditid-slides' data-iindex='{{iindex}}' data-index='{{index}}' catchtap='defDetailClick'>
+                                        <!-- <span class="priceOne">工费：约{{item.price}}</span> -->
+                                        <view class="floatRight f">共{{item.countNum}}件商品
+                                            <view class="floatRight-img">
+                                                <image src='{{item.checked ? "/images/shop/icon-down2.png" : "/images/shop/icon-up2.png" }}' style='width: {{item.checked ? "20rpx" : "12rpx" }};height:{{item.checked ? "12rpx" : "21rpx" }};'></image>
+                                            </view>
+                                        </view>
+                                    </view>
+
+                                    <view class='h-hand diti-hh' wx:if="{{item.suit === 2}}">
+                                        <image class='hhad-decrease' class='hhact' src='/images/shop/icon-decrese.png' style='width: 16rpx; height: 1px' data-index='{{index}}' catchtap='suit2Decrease'></image>
+                                        <input class='hhand-input' data-index='{{index}}' catchinput='suit2Input' value='{{item.suitSum}}'></input>
+                                        <image class='hhand-increase' class='hhact' src='/images/shop/icon-increate.png' mode='widthFix' style='width: 16rpx;' data-index='{{index}}' catchtap='suit2Increase'></image>
+                                    </view>
+
+                                </view>
+                            </view>
+
+                        </view>
+
+                        <!-- <view class='del' data-item='{{item}}' data-iindex='{{iindex}}' data-index='{{index}}' catchtap='deleDef'>
+                            <image src='/images/shop/icon-del.png' style='width: 36rpx; height: 35rpx;'></image>
+                        </view> -->
+                    </view>
+
+
+                    <!-- 单品 -->
+                    <view class='def-bottom' wx:if="{{item.checked}}">
+                        <view class='defb-info'>
+                            <view class='defb-tit'>
+                                <view>单件重/g</view>
+                                <view wx:if='{{item.onekeys.diameterLength}}'>内径/cm</view>
+                                <view wx:if='{{item.onekeys.faceWidth}}'>面宽/mm</view>
+                                <view wx:if='{{item.onekeys.ringHand}}'>手寸/#</view>
+                                <view wx:if='{{item.onekeys.length}}'>链长/cm</view>
+                                <view>总重/g</view>
+                                <view>总数量</view>
+                                <!-- <view>操作</view> -->
+                            </view>
+
+                            <view wx:for-item='it' wx:key='id' wx:for-index='ix' wx:for='{{item.cartProperties}}'>
+                                <view class='defb-item {{it.checked && "defb-item-checked"}}' data-item='{{item}}' data-iindex='{{iindex}}' data-index='{{index}}' data-ix='{{ix}}' catchtap='defCheckCartpf'>
+                                    <view>{{it.standardGold}}</view>
+                                    <view wx:if='{{item.onekeys.diameterLength}}' >{{it.extendAttr.diameterLength}}</view>
+                                    <view wx:if='{{item.onekeys.faceWidth}}'>{{it.extendAttr.faceWidth}}</view>
+                                    <view wx:if='{{item.onekeys.ringHand}}'>{{it.extendAttr.ringHand}}</view>
+                                    <view wx:if='{{item.onekeys.length}}'>{{it.extendAttr.length}}</view>
+                                    <view>{{it.allWeight}}</view>
+                                    <view class='flexss'>
+                                        <!-- 加减start -->
+                                        <!-- <view class='h-hand'>
+                                            <image class='hhad-decrease' class='hhact' src='/images/shop/icon-decrese.png' style='width: 30rpx; height: 1px' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' catchtap='suit1Decrease'></image>
+                                            <input class='hhand-input' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' bindblur='suit1Input' value='{{it.outSum}}'></input>
+                                            <image class='hhand-increase' class='hhact' src='/images/shop/icon-increate.png' mode='widthFix' style='width: 30rpx' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' catchtap='suit1Increase'></image>
+                                        </view> -->
+                                        <!-- 加减end -->
+                                        {{it.outSum}}
+                                    </view>
+                                    <!-- <view data-iindex="{{iindex}}" data-index="{{index}}" data-ix="{{ix}}" catchtap="delSingle">x</view> -->
+                                </view>
+                                <view wx:if="{{it.checked}}" class="topb">
+                                    <view class="remarksWrap">
+                                        <view class="remarkTitel">表面工艺：</view>
+                                        <view class="remarkCont">{{it.effectCode}}</view>
+                                    </view>
+                                    <view class="remarksWrap">
+                                        <view class="remarkTitel">车花描述：</view>
+                                        <view class="remarkCont">{{it.carCode}}</view>
+                                    </view>
+                                    <view class="remarksWrap" wx:if="{{it.auxTF}}">
+                                        <view class="remarkTitel">产品辅件：</view>
+                                        <view class="remarkCont axu_txt" data-iindex="{{iindex}}" data-index="{{index}}" data-ix="{{ix}}" catchtap="openAxu">查看
+                                            <image src="/images/me/right-arrow.png" style="width: 14rpx; height: 16rpx"></image>
+                                        </view>
+                                    </view>
+                                    <view class="remarksWrap">
+                                        <view class="remarkTitel">产品备注：</view>
+                                        <view class="remarkCont">{{it.productRemarks}}</view>
+                                    </view>
+                                </view>
+
+                            </view>
+
+                        </view>
+                    </view>
+
+
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!-- 标准单下单end -->
+
+    <!-- 标准单重新采购begin -->
+    <view class='def-list batar-order' wx:if="{{dataType === 'refDef'}}">
+        <view wx:for="{{tabListItem.cartCategoryFroms}}" wx:key='id' wx:for-index="iindex" wx:for-item="iitem">
+            <view class='cartcatelist' data-iiindex='{{iiindex}}' data-iindex='{{iindex}}' catchtap='defTitChecked'>
+                <view class='ccl-left'>
+                    <view class='ccll-name'>{{iitem.categoryName}}</view>
+                    <image src='{{iitem.checked ? imgTit.a : imgTit.b}}' mode='widthFix' style='width:{{iitem.checked ? "20rpx" : "12rpx" }}'></image>
+                </view>
+                <view class='ccl-right'>
+                    <view>{{iitem.sum}}件</view>
+                    <view>约{{iitem.allWeight}}g</view>
+                    <view>约{{iitem.price}}元</view>
+                </view>
+            </view>
+            <view class='def-item touch-item' data-iiindex='{{iiindex}}' data-iindex='{{iindex}}' wx:key='id' wx:if="{{iitem.checked}}" wx:for="{{iitem.orderProduct}}">
+                <view class='di-top content'>
+                    <view class='dit-info  item-wrap'>
+                        <view class='diti-label itemw-left'>
+                            <image class='item-pro' src='{{$img + item.productImg}}' data-item='{{item}}' wx:if='{{item.productImg && item.productImg !== "null"}}' style='width: 160rpx; height: 120rpx;'></image>
+                            <image class='item-pro' src='/images/shop/img-noimg.png' wx:else style='width: 160rpx; height: 120rpx;'></image>
+                            <view class='diti-info'>
+                                <view class='item-tit'>{{item.productName}}</view>
+                                <view class='item-code'>编码：{{item.productNo}}</view>
+                                <!-- <view class='item-detail' wx:if="{{item.suit === 1}}">{{item.productPey}}</view> -->
+                                <!-- <view class='item-detail' wx:if="{{item.suit === 2}}">采购数量：{{item.suitSkuSun}}</view> -->
+                                <!-- 加减start -->
+                                <view class='h-hand diti-hh' wx:if="{{item.suit === 2}}">
+                                    <image class='hhad-decrease' class='hhact' src='/images/shop/icon-decrese.png' style='width: 30rpx; height: 1px' data-index='{{index}}' data-iindex='{{iindex}}' bindtap='suit2Decrease'></image>
+                                    <input class='hhand-input' data-index='{{index}}' data-iindex='{{iindex}}' bindblur='suit2Input' value='{{item.suitSkuSun}}'></input>
+                                    <image class='hhand-increase' class='hhact' src='/images/shop/icon-increate.png' mode='widthFix' style='width: 30rpx' data-index='{{index}}' data-iindex='{{iindex}}' bindtap='suit2Increase'></image>
+                                </view>
+                                <!-- 加减end -->
+
+                            </view>
+                        </view>
+                    </view>
+                    <view class='ditid-slides' data-iiindex='{{iiindex}}' data-iindex='{{iindex}}' data-index='{{index}}' catchtap='refDefDetailClick'>
+                        工费：约{{item.price}}
+                        <span class="floatRight">共{{item.sum}}件商品
+                            <image src='{{item.checked ? "/images/shop/icon-down2.png" : "/images/shop/icon-up2.png" }}' style='width: {{item.checked ? "20rpx" : "12rpx" }};height:{{item.checked ? "12rpx" : "21rpx" }};margin-left:10rpx'></image>
+                        </span>
+                    </view>
+                </view>
+
+                <!-- 单品 -->
+                <view class='def-bottom' wx:if="{{item.checked && item.suit === 1}}">
+                    <view class='defb-info'>
+                        <view class='defb-tit'>
+                            <view>单件重/g</view>
+
+                            <view wx:if='{{item.styleKey === "diameterLength"}}'>圈口/cm</view>
+                            <view wx:if='{{item.styleKey === "length"}}'>链长/cm</view>
+                            <view wx:if='{{item.styleKey === "ringHand"}}'>手寸/cm</view>
+                            <view>总重/g</view>
+                            <view>总数量</view>
+                            <!-- <view style='width: 100rpx; flex:inherit'></view> -->
+                        </view>
+                        <view wx:for-item='it' wx:key='id' wx:for-index='ix' wx:for='{{item.orderBigSinglePropertyFroms}}' wx:if="{{item.suit === 1}}">
+                            <view class='defb-item {{it.checked && "defb-item-checked"}}' data-item="{{item}}" data-iiindex='{{iiindex}}' data-iindex='{{iindex}}' data-index='{{index}}' data-ix='{{ix}}' catchtap='refDefCheckCartpf'>
+                                <view>{{it.standardGold}}</view>
+                                <view wx:if='{{item.styleKey === "diameterLength"}}'>{{it.extendAttr.diameterLength}}</view>
+                                <view wx:if='{{item.styleKey === "length"}}'>{{it.extendAttr.length}}</view>
+                                <view wx:if='{{item.styleKey === "ringHand"}}'>{{it.extendAttr.ringHand}}</view>
+                                <!-- <view>{{it.orderSum}}</view> -->
+                                <view>{{it.allWeight}}</view>
+                                <view class='flexss'>
+                                    <!-- 加减start -->
+                                    <view class='h-hand'>
+                                        <image class='hhad-decrease' class='hhact' src='/images/shop/icon-decrese.png' style='width: 30rpx; height: 1px' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' catchtap='suit1Decrease'></image>
+                                        <input class='hhand-input' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' bindblur='suit1Input' value='{{it.orderSum}}'></input>
+                                        <image class='hhand-increase' class='hhact' src='/images/shop/icon-increate.png' mode='widthFix' style='width: 30rpx' data-ix='{{ix}}' data-index='{{index}}' data-iindex='{{iindex}}' catchtap='suit1Increase'></image>
+                                    </view>
+                                    <!-- 加减end -->
+                                </view>
+                                <view class="remarksWrap" wx:if="{{it.productRemarks}}">
+                                    <view class="remarkTitel">备注：</view>
+                                    <view class="remarkCont">{{it.productRemarks}}</view>
+                                </view>
+
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+
+                <!-- 套装 -->
+                <view class='defb-item' wx:for-item='it' wx:key='id' wx:for-index='ix' wx:for='{{item.suitProdctPeyFroms}}' wx:if="{{item.checked && item.suit === 2}}">
+                    <view class='di-top content'>
+                        <view class='dit-info item-wrap'>
+                            <view class='diti-label itemw-left'>
+                                <image class='item-pro' src='{{$img + it.productImg}}' data-item='{{it}}' wx:if='{{it.productImg && item.productImg !== "null"}}' style='width: 160rpx; height: 120rpx;'></image>
+                                <image class='item-pro' src='/images/shop/img-noimg.png' wx:else style='width: 160rpx; height: 120rpx;'></image>
+                                <view class='diti-info'>
+                                    <view class='item-tit'>{{it.productName}}</view>
+                                    <view class='item-code'>编码：{{it.productNo}}</view>
+                                    <view class='item-detail'>{{it.productPey}}</view>
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+
+
+            </view>
+        </view>
+    </view>
+    <!-- 标准单重新采购end -->
+
+
+    <view style='height: 500rpx'></view>
+
+    <view class='bottom-bottom'>
+        <!-- <view class="bb-tag">
+            <view class="bb-tag_txt">注明：出尚金缘展厅货以尚金缘工费+5元品牌挂标费收取。</view>
+        </view> -->
+        <view class="b-bottom">
+            <view class="f22 b-bottom_left ">预计总克量
+                <view class="f32 ml22 ">{{allCount.allWeight}}g</view>
+            </view>
+            <view class="txtBottomOne">共{{allCount.allCount}}件商品</view>
+        </view>
+        <view class="displayFlexOne">
+            <!-- <view class="width80 displayFlexOne_left f22" wx:if='{{allCount.allPrice}}'>预计总工费
+                <view class="f32 ml22 "> ¥{{allCount.allPrice}}</view>
+            </view> -->
+            <view style="flex: 1"></view>
+            <button class='btn-default confrimBtn' catchtap='createorderClick' >确认下单</button>
+        </view>
+    </view>
+</view>
+
+<batar-layer></batar-layer>
+
+<batar-blank blankStatus='{{viewReasonStatus}}' blankTit='{{blankTit}}' blankInfo='{{blankInfo}}'></batar-blank>
+
+<!-- 展销单弹窗 -->
+<propDef></propDef>
+
+
+<batar-propDef bind:defSerForm='exModalTrue' bind:exModalTrue='exModalFalse' cancel="取消" confirm="确定" tit='展销活动' defProp='{{exPropStatus}}'>
+    <scroll-view scroll-y class='exmodalinfo'>
+        <batar-exList bind:getExId='getExId' list='{{exList}}'></batar-exList>
+    </scroll-view>
+</batar-propDef>
+
+
+<!-- 辅件弹窗 -->
+<batar-dialog show="{{propShow}}" bind:popuHide="hideDialog" bind:popuShow="showDialog">
+    <view class='candotit'>
+        <view class='candotit-tit'></view>
+        <view catchtap='hideDialog' class='img-close'>
+            <image src='/images/shop/icon-close.png' style='width: 32rpx; height: 32rpx'></image>
+        </view>
+    </view>
+    <!-- 辅件列表 -->
+    <view class="axu-wrap">
+        <view class="c3 f32 mb10 fbold">产品辅件</view>
+        <scroll-view scroll-y style='height: 440rpx; margin'>
+            <view wx:if="{{auxiliariesList.length > 0}}">
+                <view class="axu" wx:for="{{auxiliariesList}}">
+                    <view class="axu-img">
+                        <image src="{{$img}}{{item.pic[0]}}" mode="widthFix"></image>
+                    </view>
+                    <view class="axu-content">
+                        <view>{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</batar-dialog>

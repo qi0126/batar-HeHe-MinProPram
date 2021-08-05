@@ -1,0 +1,7 @@
+<view class='addr-wrap' hidden='{{!popuStatus}}'>
+  <view class='addr-con' animation="{{animationData}}" catchtouchmove='func' catchtap='hiddenSlide'></view>
+  <view>
+    <slot></slot>
+  </view>
+</view>
+

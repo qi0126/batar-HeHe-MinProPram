@@ -1,0 +1,32 @@
+<view class="editaddress">
+  <form bindsubmit="formSubmit">
+    <view class='top'>
+      <view class='inputlist'>
+        <view>展销名称</view>
+        <input placeholder='请输入展销名称' name='exhibitName' placeholder-class='def-place'></input>
+      </view>
+      <view class='inputlist'>
+        <view>展销地址</view>
+        <input placeholder='请输入展销地址' name='exhibitAdr' placeholder-class='def-place'></input>
+      </view>
+      <view class='inputlist'>
+        <view>展销时间起</view>
+        <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
+          <view class="picker">
+           {{startTime}}
+          </view>
+        </picker>
+      </view>
+      <view class='inputlist'>
+        <view>展销时间止</view>
+        <picker mode="date" value="{{endTime}}" bindchange="endTimeChange">
+          <view class="picker">
+            {{endTime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <button formType="submit" class='btn btn-default'>确定</button>
+  </form>
+</view>

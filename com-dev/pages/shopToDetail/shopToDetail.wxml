@@ -1,0 +1,230 @@
+<view class="detail">
+  <swiper indicator-dots="{{indicatorDots}}" wx:if='{{resultPro.proUrl.length > 0}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}" indicator-active-color="{{colorActive}}">
+    <block wx:for="{{resultPro.proUrl}}" wx:key="id">
+      <swiper-item>
+        <image src="{{$img + item}}" class="slide-image" catchtap='preImgs' />
+      </swiper-item>
+    </block> 
+  </swiper> 
+
+  <swiper indicator-dots="{{indicatorDots}}" wx:else autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}" indicator-active-color="{{colorActive}}">
+    <block>
+      <swiper-item>
+        <image src="/images/shopcart/img-noimg.png" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper> 
+ 
+  <view class='pro-detail'>
+    <view class='tit'>
+      <text>{{resultPro.proName}}</text>
+      <view class='tit-right'>
+        <view class='tag' catchtap='tagClick'>
+          <image wx:if='{{tagVal === ""}}' src='/images/detail/icon-increase.png' mode='widthFix' style='width: 16rpx; margin-right: 6rpx'></image>
+          <view wx:if='{{tagVal === ""}}'>标签</view>
+          <view wx:else style='color: #a71c20'>{{tagVal}}</view>
+        </view>
+        <image src='/images/detail/icon-help.png' mode='widthFix' style='width: 24rpx' catchtap='tagQuesClick'></image>
+      </view>
+    </view>
+    <view class='batar-detail-list info'>
+      <view class='info-list' wx:if='{{resultPro.proNumber}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>产品编号:</text>
+          <text>{{resultPro.proNumber}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.effectCode}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>表面工艺:</text>
+          <text>{{resultPro.effectCode}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.carCode}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>车花描述:</text>
+          <text>{{resultPro.carCode}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.exterior}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>外观形状:</text>
+          <text>{{resultPro.exterior}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.crowd}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>适合人群:</text>
+          <text>{{resultPro.crowd}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.buckle_code}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>链扣类型:</text>
+          <text>{{resultPro.buckle_code}}</text>
+        </view>
+      </view>
+      <view class='info-list' wx:if='{{resultPro.patentNumber}}'>
+        <view class='dot'>
+          <text class='info-list-tit'>专利号:</text>
+          <text>{{resultPro.patentNumber}}</text>
+        </view>
+      </view>
+      <view class='dot' wx:if='{{resultPro.proDesc}}' style='margin-top: -6rpx'>
+        <text class='info-list-tit'>生产描述:</text>
+        <text class='list-one'>{{resultPro.proDesc}} </text>
+      </view>
+    </view>
+  </view>
+
+  <view style='height: 10rpx; background: #f5f5f5'></view>
+
+  <view class='purchase'>
+    <view class='p-tit'>订购明细</view>
+    <view class='p-info'>
+
+      <view class='size-tit'>成色：</view>
+      <scroll-view scroll-x='true' class='batar-scoll-listw p-sizescoll {{result.list.conditList.length <= 3 && "nobackground"}}'>
+        <view class='batar-scoll-list p-size'>
+          <view class='batar-scoll-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{result.list.conditList}}' wx:key='name' data-tit='conditList' data-index='{{index}}' bindtap='itemClick'>
+            {{item.name}}
+          </view>
+        </view>
+      </scroll-view>
+
+      <!-- sku克重 -->
+      <view >
+        <view class='size-tit'>克重(g)：</view>
+        <view class='batar-listw p-sizescoll'>
+          <view class='p-size'>
+            <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{result.list.weightList}}' wx:key='name' data-index='{{index}}' data-item='{{item}}' bindtap='weiItemClick'>
+              {{item.name}}
+              <view class='badge'>{{item.weightNum === 0 ? '' : item.weightNum }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 默认规格 -->
+      <view wx:if="{{!noDyn}}">
+        <view class='size-tit' wx:if='{{dynList.name === "ringHand"}}'> 手寸(cm)：</view>
+        <view class='size-tit' wx:if='{{dynList.name === "diameterLength"}}'> 圈口(cm)：</view>
+        <view class='size-tit' wx:if='{{dynList.name === "length"}}'> 链长(cm)：</view>
+        <view class='batar-listw p-sizescoll'>
+          <view class='p-size p-speclist'>
+            <view class=' s-item {{item.checked && "active trigonDown"}} {{item.disabled&&"no-sele"}}' wx:for='{{dynList.item}}' wx:key='name' data-index='{{index}}' data-item='{{item}}' hidden='{{!item.name}}' bindtap='dynItemClick'>
+              {{item.name}}
+              <view class='badge' hidden='{{!item.num}}' >{{item.num === 0 ? '' : item.num }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 参数 -->
+      <view class='param' >
+        <view class='param-list'>
+          <view class='l-item' wx:for="{{detailList}}" wx:key='name'>
+            <view>{{item.name}}</view>
+            <view wx:if='{{item.name === "备注"}}'>
+              <textarea class='remark-info' placeholder='请输入产品备注' placeholder-class='def-place' value='{{item.value}}' data-item='{{item}}' bindinput='getRemark' />
+            </view>
+            <view wx:else>{{item.value}}</view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class="p-count">
+        <text>采购数量:</text>
+        <view class='pc-right'>
+          <view class='c-handle' wx:if="{{!onItemTrue.coverStatu}}">
+            <image class='hand-decrease' class='act' src='/images/detail/icon-decrease.png' style='width: 30rpx; height: 1px' bindtap='decrease'></image>
+            <input type='number' class='hand-con' bindinput='inputConfirm' value='{{onItemTrue.num}}'></input>
+            <image class='hand-increase' class='act' src='/images/detail/icon-increase.png' mode='widthFix' style='width: 30rpx' bindtap='increase'></image>
+          </view>
+          <view class='pc-covertotal' wx:else>
+            {{onItemTrue.num || '0'}}
+          </view>
+          <!-- <view class='p-count-right'>
+            <image src='/images/cutdetail/icon-cover.png' mode='widthFix' style='width: 32rpx' catchtap='coverSlide'></image>
+          </view> -->
+        </view>
+
+      </view>
+
+      <view class='cover' wx:if="{{onItemTrue.coverStatu}}">
+        <view class='cover-tit'>
+          <view style='flex: 2'>店铺名称</view>
+          <view style='flex: 1'>分包数量</view>
+          <view style='flex: 1'></view>
+        </view>
+
+        <view class='cover-item' wx:for="{{onItemTrue.coverTrueList}}">
+          <view class='coveri-left'>{{item.text}}</view>
+          <view class='coveri-middl'>
+            <view class='cm-handle'>
+              <view class='cm-decrease' data-index='{{index}}' data-item='{{item}}' bindtap='coverDecrease'>
+                <image src='/images/detail/icon-decrease.png' style='width: 30rpx; height: 1px' ></image>
+              </view>
+
+              <input type='number' class='cm-con' data-index='{{index}}' data-item='{{item}}' bindinput='coverInputConfirm' value='{{item.count}}'></input>
+
+              <view class='cm-increase'  data-index='{{index}}' data-item='{{item}}'  bindtap='coverIncrease'>
+                <image src='/images/detail/icon-increase.png' mode='widthFix' style='width: 30rpx'></image>
+              </view>
+            </view>
+          </view>
+          <view class='coveri-right' data-index='{{index}}' data-item='{{item}}' catchtap='deleCoverList' >
+            <image src='/images/cutdetail/icon-dele.png' mode='widthFix' style='width: 32rpx'></image>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <view class="bottom">
+    <view class="batar-count-top b-top">
+      <view>
+        <view>预计总数量</view>
+        <view>{{allCount}}</view>
+      </view>
+      <view>
+        <view>预计总重量（g）</view>
+        <view>约{{allWeight}}</view>
+      </view>
+      <view>
+        <view>预计总工费（￥）</view>
+        <view>约{{allPrice}}</view>
+      </view>
+    </view>
+    <view class="b-bottom">
+      <view class='bb-left' catchtap='goShop'>
+        <image src='/images/icon-shopcart.png' mode='widthFix' style='width:48rpx'></image>
+        <view class='badge' hidden='{{shopCount === 0}}'>{{shopCount}}</view>
+      </view>
+      <button class='btn btn-default bb-con' bindtap='reset'>重置</button>
+      <button class='btn btn-default bb-right' bindtap='addTrolley'>加入购物车</button>
+    </view>
+  </view>
+
+  <batar-prop bind:defSerForm='tagConfirm' value='{{tagVal}}' defProp='{{tagStatus}}' tit='{{defRemarkTit}}' place='{{defPlace}}'> </batar-prop>
+  <batar-blank blankStatus='{{tagsDetailStatus}}' blankTit='{{blankTit}}' blankInfo='{{blankInfo}}'></batar-blank>
+
+  <!-- 分包 -->
+  <batar-propEx bind:defSerForm='coverTrue' defProp='{{coverShow}}' tit='' confirm='确定' cancel='取消'>
+    <scroll-view class='defRadio' scroll-y>
+      <view class='defr-item' wx:for='{{onItemTrue.coverList}}' wx:key='exhibitId' data-item='{{item}}' data-index='{{index}}' catchtap='defRadio'>
+        <image class='item-checkbox' src='{{item.radio ? imgStatus.a : imgStatus.b}}' mode='widthFix' style='width: 30rpx'></image>
+        <view class='defr-cont'>
+          <view class='defc-tit'>{{item.text}}</view>
+          <view class='defc-addr'>{{item.val}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </batar-propEx>
+
+</view>
+
+<!-- <view class='share' catchtap='share'><image src='/images/detail/icon-share.png' mode='widthFix' style='width: 88rpx' ></image></view> -->

@@ -1,0 +1,39 @@
+<form bindsubmit="formSubmit">
+  <view class='top'>
+    <view class='col'>
+      <text>收货人:</text>
+      <view class='right'> 
+        <input name='receiver' value='{{result.receiver || ""}}' class="inpWidth"></input>
+      </view>
+    </view> 
+    <view class='col'>
+      <text>联系方式:</text>
+      <view class='right'>
+        <input name='telephone' type='number' value='{{result.telephone || ""}}' class="inpWidth"></input>
+        <!-- <button class='btn btn-default get-phone' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">点击获取手机号</button> -->
+      </view>
+    </view>
+    <view class='col'>
+      <text>所在地区:</text>
+      <view class='right'>
+        <input class='{{(city.province ||result.province) ? "" : "def-city"}} right-addr' disabled placeholder-class='def-place' bindtap='popuShow' value='{{city.province || result.province || ""}}   {{city.city || result.city || ""}}   {{city.district || result.district || ""}}'></input>
+        <image class='arrow' src='/images/me/right-arrow.png' mode='widthFix' style='width: 16rpx'></image>
+      </view>
+    </view>
+
+    <view class='col'>
+      <text>详细地址:</text>
+      <view class='right'>
+        <input name='address' placeholder-class='def-place' value='{{result.address || ""}}' class="inpWidth"></input>
+      </view>
+    </view>
+  </view>
+
+  <view class='edit-default' catchtap='defAddClick' catchtap="defAddClick">
+    <image src='{{isDefault === "N" ? imgStatus.noSelect: imgStatus.select }}' mode='widthFix' style='width: 30rpx; height: 30rpx;'></image>
+    设为默认地址
+  </view>
+
+  <batar-address popuStatus="{{popuStatus}}" animationData="{{animationData}}" bind:popConfirm="popConfirm"></batar-address>
+  <button formType="submit" class='btn btn-default'>保存</button>
+</form>

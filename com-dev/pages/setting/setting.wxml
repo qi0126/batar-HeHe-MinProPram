@@ -1,0 +1,44 @@
+<view class='setting'>
+  <form bindsubmit="formSubmit">
+    <view class='inputitem'>
+      <text>账号</text>
+      <input name='username' value='{{result.username}}' class='disabled' disabled></input>
+    </view>
+    <view class='inputitem' catchtap='goChangePassWord'>
+      <text>密码</text>
+      <view class='inputitem-right'>
+        <input disabled value='********'></input>
+        <image src='/images/me/meJian.png' mode='widthFix' style='width: 16rpx'></image>
+      </view>
+    </view>
+    <view class='inputitem'>
+      <text>手机号码</text>
+      <input name='telephone' value='{{result.telephone}}' class='disabled' disabled ></input>
+    </view>
+    <view class='inputitem'>
+      <text>办公电话</text>
+      <input name='Phone' value='{{result.phone}}' class='disabled' disabled ></input>
+    </view>
+    <view class='inputitem'>
+      <text>邮箱地址</text>
+      <input name='mail' value='{{result.mail}}' class='disabled' disabled></input>
+    </view>
+    <view class='inputitem'>
+      <text>联系人</text>
+      <input name='Concat' value='{{result.concat}}' class='disabled' disabled></input>
+    </view>
+    <view class='inputitem'>
+      <text>公司名称</text>
+      <input name='userId' value='{{result.companyName}}' class='disabled' disabled></input>
+    </view>
+    <view class='inputitem'>
+      <text>商户编号</text>
+      <input name='userId' value='{{result.companyCode}}' class='disabled' disabled></input>
+    </view>
+    <view class='inputitem'>
+      <text>关联业务员</text>
+      <input value='{{result.clerkName || "无"}}' class='disabled' disabled></input>
+    </view>
+    <!-- <button formType="submit" class='btn btn-default bottom'>保存</button> -->
+  </form>
+</view>

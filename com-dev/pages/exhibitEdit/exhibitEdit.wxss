@@ -1,0 +1,32 @@
+button {
+  position: fixed;
+  bottom: 0
+}
+
+.inputlist {
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  height: 98rpx;
+  background: #fff;  
+}
+
+.inputlist > view {
+  width: 170rpx;
+  color: #999
+}
+
+.inputlist > input, .inputlist > picker {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 58rpx;
+  border-radius: 4rpx;
+}
+
+.inputlist > picker .picker {
+  display: block;
+  width: 300rpx
+}
+

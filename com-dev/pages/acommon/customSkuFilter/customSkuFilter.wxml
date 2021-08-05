@@ -1,0 +1,88 @@
+  <view class='p-info'>
+    <view class='size-tit'>成色：</view>
+    <scroll-view scroll-x='true' class='batar-scoll-listw p-sizescoll {{proObj.conditiList.length <= 3 && "nobackground"}}'>
+      <view class='batar-scoll-list p-size'>
+        <view class='batar-scoll-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.conditiList}}' wx:key='txt' data-tit='conditList' data-index='{{index}}' data-item='{{item}}' bindtap='conditiClick'>
+          {{item.txt}}
+        </view>
+      </view>
+    </scroll-view> 
+
+    <view wx:if="{{proObj.propsData.oneItemsCode === 'SZ'}}">
+      <view class='size-tit'>
+        <view>圈口(cm)：</view>
+        <view class='rightcus'  wx:if="{{proObj.customDiameter.scopeList.length > 0 && showCusTxt}}"  catchtap='setCoustomDiameter'>可选圈口</view>
+      </view>
+      <view class='batar-listw p-sizescoll'>
+        <view class='p-size'>
+          <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.diameterList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='diameterClick'>
+            {{item.txt}}
+          </view>
+        </view> 
+      </view>
+    </view>
+
+    <view wx:if="{{proObj.propsData.oneItemsCode === 'JZ'}}">
+      <view class='size-tit'>
+        <view>手寸(#)：</view>
+        <view class='rightcus' wx:if="{{proObj.customRinghand.scopeList.length > 0 && showCusTxt}}" catchtap='setCoustomRinghand'>可选手寸</view>
+      </view>
+      <view class='batar-listw p-sizescoll'>
+        <view class='p-size'>
+          <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.ringhandList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='ringhandClick'>
+            {{item.txt}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{proObj.propsData.oneItemsCode === 'XL' || proObj.propsData.oneItemsCode === 'SL'}}">
+      <view class='size-tit' >
+        <view style='color: #999'>链长(cm)：</view>
+        <view  class='rightcus'catchtap='coustomLengthShow'>链长选择参考</view>
+      </view>
+    </view>
+
+    <!-- sku克重 -->
+    <view>
+      <view class='size-tit'>
+        <view>克重(g)：</view>
+        <view class='rightcus' wx:if="{{proObj.customWeight.scopeList.length > 0}}" catchtap='setCoustomWeight'>可选克重</view>
+      </view>
+      <view class='batar-listw p-sizescoll'>
+        <view class='p-size'>
+          <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.weightList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='weightClick'>
+            {{item.txt}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+<batar-propDef defProp='{{cusTomsData.cusTomsProp}}' tit='{{cusTomsData.cusTomsPropTit}}' bind:defSerForm="cusSubmit" bind:exModalTrue="cusCancel" confirm='确定' cancel='取消'>
+  <view class='cusinput'>
+    <input type='digit' value='{{cusTomsData.inputValue}}' bindinput="getCusToms" placeholder="{{cusTomsData.placeholder}}" />
+  </view> 
+  <view class='cusscope'>
+    <view class='cusscope-tit'>{{cusTomsData.scopeName}}</view>
+    <view class='cusscope-right'>
+      <view wx:for="{{cusTomsData.scopeList}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+</batar-propDef>
+
+<batar-propShow bind:defSerForm='closeChainProp' defProp='{{chainProp}}' tit='{{chainPropTit}}' confirm='返回'>
+  <view class='param chain-box'>
+    <view class='param-list'>
+      <view class='l-item'>
+        <view class='th'>克重(g)</view>
+        <view class='th'>链长(cm)</view>
+      </view>
+      <view class='l-item' wx:for="{{chainScopeList}}" wx:key='name'>
+        <view>{{item.name}}</view>
+        <view>{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+</batar-propShow>

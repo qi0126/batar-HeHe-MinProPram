@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "产品分类",
+    "usingComponents": {
+      "top-seacrch": "/pages/acommon/topSearch/topSearch"
+    }
+}

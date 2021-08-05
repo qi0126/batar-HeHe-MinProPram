@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的订单",
+   "usingComponents": {
+      "order-product": "/pages/acommon/orderProduct/orderProduct",
+      "proList": "/pages/acommon/proList/proList"
+    }
+} 

@@ -1,0 +1,39 @@
+<wxs src="../../utils/filter.wxs" module="util"></wxs>
+<view class='serachWrap'>
+  <view class='upperPart'>
+    <view class='searchCont'>
+      <image src="/images/index/searchIcon.png" mode='widthFix' class='searchIcon' catchtap='closeFun'></image>
+      <input placeholder="请输入名称、编号、大类.." class='inputBox' focus="{{true}}" placeholder-class="placeholder" bindconfirm="confirmFun" bindinput='change' value='{{inputValue}}'  confirm-type="search" ></input>
+      <image src="/images/index/closeIcon.png" mode='widthFix' class='closeIcon' catchtap='closeFun'></image>
+    </view>
+    <view class='cancel' catchtap='goSearch'>搜索</view>
+  </view>
+
+  <!-- <view class='searchResult' hidden="true">
+    <view class='resItem'  catchtap='goSearch'>大家好</view>
+     <view class='resItem'  catchtap='goSearch'>大家好</view>
+  </view> -->
+
+  <!-- 历史记录 -->
+  <view>
+    <view class='historicalWrap' hidden="{{searchHistory.length == 0}}">
+      <view class='titleWrap'>
+        <view class='historicalTitle'>历史记录</view>
+        <image src="/images/index/deleteIcon.png" mode='widthFix' class='delIcon' catchtap='delFun'></image>
+      </view>
+      <view class='historicalUL'>
+        <view class='historicalLI' catchtap='historySearch'wx:for="{{searchHistory}}" data-searchName='{{item}}'>
+        {{util.limitWordNumber(item,5)}}</view>
+      </view>
+    </view>
+    <!-- <view class='line' hidden="{{searchHistory.length == 0}}"></view> -->
+    <!-- <view class='hotSearchWrap' hidden='{{themeKeyWord.length === 0}}'>
+      <view class='hotSearch'>热门搜索</view>
+      <view class='hotSearchUL'>
+        <view class='hotSearchLI' wx:for="{{themeKeyWord}}" wx:key="item.buseiness.id" data-searchName='{{item.buseiness.themeName}}' catchtap='goThemeProductList'>{{util.limitWordNumber(item.buseiness.themeName,5)}}</view>
+      </view>
+    </view> -->
+  </view>
+</view>
+
+<!-- <view wx:if='{{serachResult.length === 0}}' class='noProText'>暂无您要的数据</view> -->

@@ -1,0 +1,13 @@
+page{
+  background: #fff;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0
+}
+
+input.disabled {
+  color: #000000
+}
+

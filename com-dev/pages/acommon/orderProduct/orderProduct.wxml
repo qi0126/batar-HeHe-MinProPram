@@ -1,0 +1,20 @@
+<view class="productWrap" data-orderNo="{{productData.orderNo}}" catchtap="goOrderDetail">
+    <!-- 上 -->
+    <view class="topWrap">
+          <view class="orderNumber">订单号：{{productData.orderNo}}</view>
+          <view class="timeStyle">{{productData.orderCreateTime}}</view>
+          
+    </view>
+
+    <!-- 下 -->
+    <view class="bottomWrap">
+        <view>总克重：{{productData.endOrderTotalWeight}}g</view>
+        <view>共 {{productData.orderTotalSum}} 件</view>
+        <view class="cancelOrder" data-orderNo="{{productData.orderNo}}" catchtap="cancelOrder" wx:if="{{productData.orderStatus == 1}}">取消订单</view>
+        <!-- <view class="cancelOrder" data-orderNo="{{productData.orderNo}}" wx:elif="{{productData.orderStatus == 3}}">重新下单</view> -->
+        <view class="cancelOrder" data-orderNo="{{productData.orderNo}}" wx:elif="{{productData.orderStatus == 4}}">查看详情</view>
+        
+    </view>
+
+
+</view>

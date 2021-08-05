@@ -1,0 +1,216 @@
+@import '/styles/btn.wxss';
+@import '/styles/sear.wxss';
+@import '/styles/utils.wxss';
+@import '/styles/mhUtils.wxss';
+@import '/styles/loadMore.wxss';
+@import '/styles/proList.wxss';
+@import '/styles/row.wxss';
+@import '/styles/list.wxss';
+@import '/styles/crease.wxss';
+@import "./svg/iconfont.wxss";
+
+page {
+  color: #333;
+  font-size: 28rpx;
+  background: #F3F3F3;
+  font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 "PingFang SC",
+                 "Helvetica Neue",
+                 STHeiti,
+                 "Microsoft Yahei",
+                 Tahoma,
+                 Simsun,
+                 sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.batar-order .item-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  background: #fff;
+  padding-bottom: 16rpx;
+
+}
+.batar-order .item-checkbox {
+  padding: 48rpx 0;
+  padding-right: 10rpx;
+}
+
+.batar-order .item-pro {
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  margin-right: 25rpx;
+}
+
+.batar-order .item-code {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.batar-order .item-detail {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+
+.batar-order .ditid-arrows {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+}
+
+.batar-order .itemw-left {
+  display: flex;
+  /* align-items: center; */
+}
+
+
+.batar-order .def-bottom {
+  padding: 20rpx 25rpx;
+  background: #fff;
+}
+
+.batar-order .defb-info {
+  border: 1px solid #e6e6e6;
+}
+
+.batar-order .defb-tit {
+  display: flex;
+  line-height: 48rpx;
+  color: #E86800;
+  font-size: 24rpx;
+}
+
+
+
+.batar-order .defb-tit > view {
+  flex:1;
+  text-align: center;
+}
+
+.batar-order .defb-item {
+  display: flex;
+  align-items: center;
+  line-height: 60rpx;
+  border-top: 1px solid #e6e6e6;
+  color: #666;
+  font-size: 24rpx;
+  background: #fff;
+  height:60rpx;
+}
+
+.batar-order .defb-item.defb-item-checked {
+  background: #fafafa
+}
+
+.batar-order .defb-item.noline {
+   line-height: 1.2; 
+}
+
+.batar-order .defb-item > view {
+  flex:1;
+  text-align: center;
+}
+
+
+/* input列表 （账户信息） begin */
+
+.inputitem {
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  min-height: 98rpx;
+}
+
+.inputitem > text {
+  flex: 1;
+  color: #999;
+}
+
+.inputitem > input, .inputitem-right {
+  flex: 3;
+}
+
+.inputitem-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* input列表 end */
+
+/*公用样式start*/
+.floatRight{
+  float:right;
+}
+.displayFlex{
+  display:flex;
+}
+.txt28{
+  font-size:28rpx;
+}
+.txt30{
+  font-size:30rpx;
+}
+.txt32{
+  font-size:32rpx;
+}
+.width20{
+  width:20%;
+}
+.width30{
+  width:30%;
+}
+.width40{
+  width:40%;
+}
+.width80{
+  width:80%;
+}
+.width90{
+  width:90%;
+}
+.width100{
+  width:100%;
+}
+.top22{
+  margin-top:22rpx;
+}
+.marginCenter{
+  margin:0 auto;
+}
+.backfff{
+  background: #fff;
+}
+.back333{
+  background: #333;
+}
+.right20{
+  margin-right:20rpx;
+}
+
+.fontWeightBold{
+  font-weight: bold;
+}
+.txtBold{
+  font-weight:bold
+}
+
+/* 隐藏scroll-view滚动条 */
+::-webkit-scrollbar {
+width: 0;
+height: 0;
+color: transparent;
+ 
+}
+/*公用样式end*/
+

@@ -1,0 +1,28 @@
+<view>
+    <school-searchTop bind:goSearch="goSearch"></school-searchTop>
+
+    <!-- 课堂 -->
+    <view class="classRoom">
+        <view class="title" wx:if="{{allNum}}">全部资讯课程（{{allNum}}课）</view>
+        <view>
+            <view wx:for="{{consultClassroomList}}" data-item="{{item}}" wx:key="id">
+                <infor-card info="{{item}}" data-index="{{index}}" bind:goDiscuss="goDiscuss" bind:like="consultClassroomLike" bind:goDetail="goConsultClassroomDetail"></infor-card>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{consultClassroomList.length === 0}}" class="noData">
+       ～没有更多内容了～
+    </view>
+
+    <view class='loadmore' wx:if="{{consultClassroomList.length > 0}}">
+        <view class="loading_box" hidden="{{loadMore}}">
+            <view class="loading_rotate_cube_parent">
+                <view class="loading_rotate_cube"></view>
+            </view>
+        </view>
+        <view class="noData" hidden="{{!loadMore}}">～没有更多内容了～</view>
+    </view>
+
+    <!-- <view class="noData">～没有更多内容了～</view> -->
+</view>

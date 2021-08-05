@@ -1,0 +1,10 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+
+<view>
+  <template is="wxParse" data="{{wxParseData: article.nodes}}" />
+</view>
+
+<!-- 返回首页 -->
+<button open-type="share" class='backHome' >
+  <view class='font_family icon-fenxiang'></view>
+</button>

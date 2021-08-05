@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "巡店记录",
+  "usingComponents": {
+    "patrolShopCard": "/pages/acommon/patrolShop-card/patrolShop-card",
+    "patrolShopFeedback": "/pages/acommon/patrolShop-feedback/patrolShop-feedback",
+    "patrolShopReply": "/pages/acommon/patrolShop-reply/patrolShop-reply",
+    "patrolShopAssess": "/pages/acommon/patrolShop-assess/patrolShop-assess"
+  }
+}

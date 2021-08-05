@@ -1,0 +1,29 @@
+<view class="cardWrap" catchtap="goPatrolShopDetail">
+   <view class="titleWrap">
+        <view class="title">
+              <view class="number">巡店编号：{{info.planStoreNum}}</view>
+              <view class="status" wx:if="{{info.storeStatus === 0}}">待反馈</view>
+              <view class="status" wx:elif="{{info.storeStatus === 1}}">待回复</view>
+              <view class="status" wx:else="{{info.storeStatus === 2}}">已回复</view>
+              <!-- <view class="status" wx:else>待反馈</view> -->
+        </view>
+   </view>
+
+   <view class="middleWrap">
+      <view class="middle">
+          <view class="">巡店人员：{{info.userName}}</view>
+          <view class="tel">联系方式：{{info.phone}}</view>
+      </view>
+   </view>
+
+   <view class="bottomWrap">
+      <view class="time">巡店日期：{{info.predictStartTime}}-{{info.predictEndTime}}</view>
+      <view class="btnWrap" wx:if="{{info.storeStatus !== 1 && info.storeStatus !== 2}}" >
+          <view class="customBtn">反馈</view>
+      </view> 
+
+      <view class="detailWrap" wx:else>
+          <view class="detailDes">查看巡店报告<i class="font_family icon-ziyuan2 rightArrow"></i></view>
+      </view> 
+   </view>
+</view>

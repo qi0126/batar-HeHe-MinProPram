@@ -1,0 +1,62 @@
+hehe
+
+git:http://192.168.16.20/batar-sjy/heheWxApp.git
+
+us: giazs@protonmail.com
+pw: Abc12345
+appId: wxb19f4dbb8ba33695
+companyCode: HHZBK6
+FASD  123456
+
+
+GIA钻石信息查询 小程序账号密码： （尚金缘OMS对应）
+us: zszscx@protonmail.com
+pw: Abc12345
+
+wx13ad3766901ef890
+a98c903a82738859307cb1f45c59bad1
+
+
+
+和合小程序后台
+小程序:hhsr@batar.cn 
+密码:baijibaitai9999
+
+appID
+wxf362acb9389e739b
+app密钥
+4f2583c04d4d4e05ad0016f601ea66f6
+companyCode: HHBTZB
+
+
+http://192.168.16.19:9160/#/login
+heheadmin
+123456
+
+http://management.szsjysy.com/#/login
+hhbtadmin
+123456
+
+业务员
+hhywy
+
+集团测试客户1
+hhtest1
+
+
+审核账户
+hhtest002
+hhtest004
+
+88888888
+审核完请点“我的”下的“切换账户”解绑该账户
+
+hhtest005
+123456
+
+hhtest006
+123456
+
+
+danscnshhmd
+

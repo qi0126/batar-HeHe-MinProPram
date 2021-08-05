@@ -1,0 +1,24 @@
+<view class='login'>
+	<view class='top'>
+	</view>
+	<view class='bottom'>
+		<view class="loginTxt">登录您的账号</view>
+		<form bindsubmit="formSubmit">
+			<view class='login-input'>
+				<input name='loginName' placeholder='请输入账号' value="{{ userName }}" data-type="userName" bindinput="changeInputInfo" bindconfirm="login"></input>
+			</view>
+			<view class='login-input'>
+				<input type='password' name='password' data-type="passWord" value="{{ passWord }}" placeholder='请输入密码' bindinput="changeInputInfo" bindconfirm="login"></input>
+				<!-- <image src='/images/login/loginEye.png' mode='widthFix' style='width: 36rpx'></image> -->
+			</view>
+
+			<view class="tag">
+				<view>
+					<image src="/images/icon-tag.png" style="width: 36rpx; height: 36rpx"></image>
+				</view>
+				<view>百泰首饰官方小程序商城，为您提供一站式珠宝服务新体验！</view>
+			</view>
+			<button formType='submit' class='btn btn-default login-btn'>确认登录</button>
+		</form>
+	</view>
+</view>

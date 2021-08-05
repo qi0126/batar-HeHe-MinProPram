@@ -1,0 +1,24 @@
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<view class="wxParseWrap">
+   <template is="wxParse" data="{{wxParseData: article.nodes}}" />
+   <view class="imgWrap" hidden="{{!(wxParseData.name == '联系我们')}}" catchtap="clerkPhone">
+      <image class="phoneIcon" src="/images/brand/phone.png"></image>
+      <view class="contact">联系客服</view>
+   </view>
+    <view class="modal-box" hidden="{{flag}}" bindtap="hideModal">
+      <view class="modal-body">
+        <view class="modal-content">
+          <view class="modalOne">
+            <view class="modalTop">
+              <span class="fontWeightBold">{{clerkName}}</span>真诚为您服务
+              <view class="modalTxtOne">Tel:{{clerkPhoneNum}}</view>
+            </view>
+            <view class="modalBottom">
+              <view class="bottomLeft" bindtap="hideModal">暂不咨询</view>
+              <view class="bottomRight" bindtap="openClerk">拨打电话</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

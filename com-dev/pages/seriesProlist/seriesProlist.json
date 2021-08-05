@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "",
+    "onReachBottomDistance": 300,
+    "usingComponents": {
+        "tabsProduct": "/pages/acommon/tabsProduct/tabsProduct"
+    }
+}

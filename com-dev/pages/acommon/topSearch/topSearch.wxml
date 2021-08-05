@@ -1,0 +1,6 @@
+<view class="searchWrap">
+    <view class="analogInput" catchtap="goSearch">
+        <image src="/images/index/searchIcon.png" style='width: 28rpx; height: 28rpx' ></image>
+        <view class="des">请输入关键字</view>
+    </view>
+</view>

@@ -1,0 +1,45 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+
+<view>
+    <template is="wxParse" data="{{wxParseData: article.nodes}}" />
+</view>
+
+<view class="result" wx:if="{{list.length > 0}}">主题产品（{{allNum}}件）</view>
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="skuNum" data-item="{{item}}" catchtap='goDetail'>
+        <view class='it-img'>
+            <image class='top' src='{{$img + item.pic}}' wx:if='{{item.pic}}' lazy-load></image>
+            <image class='top' src='/images/shop/img-noimg.png' wx:else lazy-load></image>
+        </view>
+        <view class='bottom cf'>
+            <view class='b-tit'>{{item.proName}}</view>
+            <view class='b-info'>编码: {{item.batarNum}}</view>
+            <view class='b-info kWrap' data-item='{{item}}' data-iitem='{{iitem}}' data-index='{{index}}' data-iindex='{{iindex}}' catchtap='slideCollect'>克重(g): {{item.gold}}
+                <span>
+                    <image src='/images/proList/loveOne.png' style='width: 34rpx; height: 28rpx; float: right' hidden="{{item.isColl === 1}}"></image>
+                    <image src='/images/proList/loveOneS.png' style='width: 34rpx; height: 28rpx; float: right' hidden="{{item.isColl === 0}}"></image>
+                </span>
+            </view>
+
+        </view>
+    </view>
+</view>
+
+<view class='loadmore' hidden='{{result.rowSize < 30}}'>
+    <view class="loading_box" hidden="{{loadMore}}">
+        <view class="loading_rotate_cube_parent">
+            <view class="loading_rotate_cube"></view>
+        </view>
+    </view>
+    <text hidden="{{!loadMore && productStatus && page===1}}">没有更多数据了</text>
+</view>
+
+<view class='nothing' wx:if='{{!loadMore && productStatus && page===1}}'>
+    <image src='/images/img-nothing.png' style='width: 169rpx; height: 168rpx'></image>
+    <view class="txtNothing">暂无相关产品哦！</view>
+</view>
+
+<!-- 返回首页 -->
+<button open-type="share" class='backHome' >
+  <view class='font_family icon-fenxiang'></view>
+</button>

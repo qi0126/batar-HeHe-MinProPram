@@ -1,0 +1,110 @@
+page {
+  padding-top: 24rpx;
+  padding-bottom: 150rpx;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  background: #f8f8f8
+}
+
+
+.listWrap {
+   background: #fff;
+   margin-bottom: 23rpx;
+}
+
+/* 上部 */
+.listTop{
+  padding: 36rpx 0rpx 55rpx 33rpx;
+  border-bottom:1px solid rgba(229,229,229,1);
+}
+
+.nameTele{
+  color:rgba(51,51,51,1);
+  display: flex;
+  align-items: center;
+}
+
+.nameTele .name{
+  font-size:32rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:bold;
+}
+
+.nameTele .tele{
+  font-size:30rpx;
+  font-family:SFNSDisplay;
+  margin-left: 46rpx;
+
+}
+
+.detailsAddress{
+  margin-top: 19rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(102,102,102,1);
+  
+}
+
+/* 下部 */
+
+.listBottom{
+    padding: 28rpx 39rpx 28rpx 35rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left,.right{
+    display: flex;
+    align-items: center;
+}
+
+.left .default{
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(153,153,153,1);
+  margin-left: 16rpx;
+}
+
+.right .editImg{
+  /* margin-right: 59rpx; */
+}
+
+.editImgWrap, .deleImgWrap{
+  /* background: red; */
+  padding-left: 30rpx;
+  height: 50rpx;
+  width: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+
+
+/* 按钮 */
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0
+}
+
+/* .item.on {
+  background: #E8E8E8
+} */
+
+.nothing {
+  margin-top: 340rpx;
+}
+
+.nothing > view {
+  margin-top: 20rpx;
+}
+
+.btn-default {
+  color: #fff
+}

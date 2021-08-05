@@ -1,0 +1,134 @@
+{
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.4",
+  "appid": "wxf362acb9389e739b",
+  "projectname": "com-dev",
+  "scripts": {},
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "套装详情",
+          "pathName": "pages/detailSuit/detailSuit",
+          "query": "proNum=heheTaozhuang",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "单品详情",
+          "pathName": "pages/detail/detail",
+          "query": "proNum=111112313",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "咨询课堂",
+          "pathName": "pages/inforClassroom/inforClassroom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "知识课堂",
+          "pathName": "pages/knowledgeClassroom/knowledgeClassroom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "主题富文本",
+          "pathName": "pages/themeRich/themeRich",
+          "query": "proNum=nctz110",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "点击系列进入产品",
+          "pathName": "pages/seriesProlist/seriesProlist",
+          "query": "id=114",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "巡店记录",
+          "pathName": "pages/patrolShop/patrolShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "巡店详情",
+          "pathName": "pages/patrolShopDetail/patrolShopDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "订单详情",
+          "pathName": "pages/orderDetails/orderDetails",
+          "query": "orderNo=XS202004151313",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "登录界面",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

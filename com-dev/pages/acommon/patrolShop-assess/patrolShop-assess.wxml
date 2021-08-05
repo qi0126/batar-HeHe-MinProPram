@@ -1,0 +1,112 @@
+<view class="assessModal" hidden="{{!modalShow}}"   catchtouchmove="noMove" >
+    <view class="assessCont" catchtouchmove="noMove" >
+        <view class="close" catchtap="closeFun">
+            <i class="font_family icon-X closeIcon"></i>
+        </view>
+
+        <view class="assessTitleWrap">
+            <view class="assessTitle">对巡店进行反馈</view>
+        </view>
+
+        <!-- 评价 -->
+        <view class="assessWrap">
+            <!-- 评价内容 -->
+            <view class="assess">
+                <view class="assessLi">
+                    <view class="left">
+                        服务人员态度
+                        <view class="colorYellow">*</view>
+                    </view>
+                    <view class="right">
+                        <view class="right_star" wx:for="{{attitudeStarList}}" wx:key="index"  data-index="{{index}}" catchtap="attitude">
+                            <text class="font_family icon-star_full star real" wx:if="{{item.starStatus === 1}}"></text>
+                            <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:else></text>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="assessLi">
+                    <view class="left">
+                        服务人员专业度
+                        <view class="colorYellow">*</view>
+                    </view>
+                    <view class="right">
+                        <view class="right_star" wx:for="{{professionalismStarList}}" wx:key="index" data-index="{{index}}" catchtap="professionalism">
+                            <text class="font_family icon-star_full star real" wx:if="{{item.starStatus === 1}}"></text>
+                            <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:else></text>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="assessLi">
+                    <view class="left">
+                        服务内容匹配度
+                        <view class="colorYellow">*</view>
+                    </view>
+                    <view class="right">
+                        <view class="right_star" wx:for="{{matchingStarList}}" wx:key="index" data-index="{{index}}" catchtap="matching">
+                            <text class="font_family icon-star_full star real" wx:if="{{item.starStatus === 1}}"></text>
+                            <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:else></text>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="assessLi">
+                    <view class="left">
+                        期待下次同一老师到店
+                        <view class="colorYellow">*</view>
+                    </view>
+                    <view class="right">
+                        <view class="right_star" wx:for="{{teacherStarList}}" wx:key="index" data-index="{{index}}" catchtap="teacher">
+                            <text class="font_family icon-star_full star real" wx:if="{{item.starStatus === 1}}"></text>
+                            <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:else></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <!-- 评价提示 -->
+            <view class="assessTips">
+                1星为非常不满意；2星为不满意；3星为一般；4星为满意；5星为非常满意
+            </view>
+        </view>
+
+
+        <!-- 评价天数 -->
+        <view class="dayWrap">
+            <view class="dayLeft">
+                巡店天数
+                <view class="colorYellow">*</view>
+            </view>
+
+            <view class="dayRight">
+                <view class="dayBtn">
+                    <view class="dayReduce" catchtap="reduce">-</view>
+                    <input class="dayInput" value="{{dateNum}}" type="number" bindinput="dayNumFun"></input>
+                    <view class="dayPlus"  catchtap="add">+</view>
+                </view>
+                <view class="dayNum">天</view>
+
+            </view>
+        </view>
+
+        <!-- 其他建议 -->
+        <view>
+            <view class="otherWrap">
+                <view class="adviseTitle">其他建议</view>
+                <textarea name="content" class="advise" value="{{proposal}}" maxlength="800"  catchinput="getProposal" placeholder="请输入建议"></textarea>
+            </view>
+            <view class="wordNumber">{{max - current}}/{{max}}字</view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class="assessConfirmWrap">
+            <button class="assessConfirmBtn" catchtap="confirm" loading="{{btnLoading}}" disabled="{{btnLoading}}">确定</button>
+        </view>
+
+
+
+    </view>
+
+
+</view>

@@ -1,0 +1,70 @@
+<view class='shopCartWarp' catchtouchmove="ture" hidden="{{!isShow}}">
+  <view class='slideh' animation="{{animationData}}" catchtap='hideShopCartDialog'></view>
+
+  <view class='shopCartcontentWrap'>
+      <image class="icon-close" src="../../../images/shop/icon-close.png" catchtap="hideShopCartDialog"></image>
+     <view class="shopCartcontent">
+        <view class="productDes">
+            <view class="imgWrap"><image src="/images/index/Group.jpg" mode="widthFix"></image></view>
+            <view class="wordsWrap">
+                <view class="itemOne">
+                  <view class="left"></view>
+                  <view>{{dataSource.pro.proName}}</view>
+                </view>
+
+                <view class="itemTwo">
+                    <view class="left">商品编号：</view>
+                    <view>{{dataSource.pro.proNumber}}</view>
+                </view>
+            </view>
+        </view>
+
+        <scroll-view scroll-y class='scroll-wrap'>
+            <view class="skuListWrap">
+                <view class="skuList">
+                    <view class="skuName">成色</view>
+                    <view class="skuItemWrap">
+                        <view class="skuItem activity" wx:for="{{dataSource.list.conditList}}" wx:key="*this" wx:key='name' data-tit='conditList' data-index='{{index}}' bindtap='itemClick'>{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="skuList">
+                    <view class="skuName">克重(g)</view>
+                    <view class="skuItemWrap">
+                        <view class="skuItem" wx:for="{{dataSource.list.weightList}}" wx:key="*this" wx:key='name' data-tit='weightList' data-index='{{index}}' bindtap='itemClick'>{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="skuList">
+                    <view class="skuName">
+                      <view class='size-tit' wx:if='{{dataSource.pro.oneItemsCodeName === "戒指"}}'> 手寸(#)</view>
+                      <view class='size-tit' wx:if='{{dataSource.pro.oneItemsCodeName === "手镯"}}'> 圈口(cm)</view>
+                      <view class='size-tit' wx:if='{{dataSource.pro.oneItemsCodeName === "手链" || dataSource.pro.oneItemsCodeName === "项链"}}'> 链长(cm)</view>
+                    </view>
+                    <view class="skuItemWrap" wx:if="{{dataSource.skuList.length > 0}}">
+                        <view class="skuItem" wx:for="{{dataSource.skuList}}" wx:key="*this" wx:key='name' data-tit='conditList' data-index='{{index}}' bindtap='itemClick'>{{item.extendAttr.length}}</view>
+                    </view>
+                </view>
+                
+            </view>
+        </scroll-view>
+     </view>
+     <view class="footerWrap" hidden="{{!isBtn}}">
+        <view class="totalWrap">
+           <view class="totalNum">预计总克重：<view class="num">20g</view></view>
+           <view class="SymbolWrap">
+              <view class="operation">
+                <view class="reduce" bindtap='decrease'>-</view>
+                <view class="number">{{totalSum}}</view>
+                <view class="plus" bindtap='increase'>+</view>
+              </view>
+              <view class="company">件</view>
+           </view>
+        </view>
+        <view class="btnWrap">
+            <view class="leftBtn btnDef">预计总工费：≈ 2456.8</view>
+            <view class='rightBtn btnDef'>确定</view>
+        </view>
+     </view>
+
+  </view>
+
+</view>

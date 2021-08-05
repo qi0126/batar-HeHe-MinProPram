@@ -1,0 +1,58 @@
+<view class="feedbackWrap">
+    <view class="feedbackTitleWrap">
+        <view class="feedbackTitle">反馈详情</view>
+    </view>
+
+    <!-- 评价 -->
+    <view class="assessWrap">
+        <view class="assess">
+            <view class="assessLi">
+                <view class="left">服务人员态度</view>
+                <view class="right">
+                    <text class="font_family icon-star_full star real" wx:for="{{info.shopPlanFeedback.serviceStaffSatisfaction}}" wx:key="index"></text>
+                    <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:for="{{5 - info.shopPlanFeedback.serviceStaffSatisfaction}}" wx:key="index"></text>
+                </view>
+            </view>
+
+            <view class="assessLi">
+                <view class="left">服务人员专业度</view>
+                <view class="right">
+                    <text class="font_family icon-star_full star real" wx:for="{{info.shopPlanFeedback.serviceStaffMajor}}" wx:key="index"></text>
+                    <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:for="{{5 - info.shopPlanFeedback.serviceStaffMajor}}" wx:key="index"></text>
+                </view>
+            </view>
+
+            <view class="assessLi">
+                <view class="left">服务内容匹配度</view>
+                <view class="right">
+                    <text class="font_family icon-star_full star real" wx:for="{{info.shopPlanFeedback.serviceContentSuited}}" wx:key="index"></text>
+                    <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:for="{{5 - info.shopPlanFeedback.serviceContentSuited}}" wx:key="index"></text>
+                </view>
+            </view>
+
+            <view class="assessLi">
+                <view class="left">期待下次同一老师到店</view>
+                <view class="right">
+                    <text class="font_family icon-star_full star real" wx:for="{{info.shopPlanFeedback.hopefulNext}}" wx:key="index"></text>
+                    <text class="font_family icon-changyongtubiao-xianxingdaochu-zhuanqu- star" wx:for="{{5 - info.shopPlanFeedback.hopefulNext}}" wx:key="index"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 天数 -->
+    <view class="dayWrap">
+        <view class="day">
+            <view class="dayLeft">巡店天数</view>
+            <view class="dayRight">{{info.shopPlanFeedback.timeNum}} 天</view>
+        </view>
+    </view>
+
+    <!-- 巡店建议 -->
+    <view class="proposalWrap">
+        <view class="proposalWrapTitle">巡店建议</view>
+        <view class="proposalWrapDes">{{info.shopPlanFeedback.evaluate}} 
+        </view>
+
+    </view>
+</view>

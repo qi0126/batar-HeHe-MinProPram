@@ -1,0 +1,42 @@
+<view class="discussWrap">
+    <view class="discuss">
+        <view class="num" wx:if="{{allNum}}">评论 {{allNum}}</view>
+        <view class="ul">
+          <view class="li" wx:for="{{discussList}}" wx:key="id" data-item="{{item}}">
+              <view class="imgWrap">
+                  <image mode="widthFix" src='{{$img + item.url}}'></image>
+              </view>
+              <view class="desWrap">
+                  <view class="name">{{item.nickname}}</view>
+                  <view class="des">{{item.content}}</view>
+              </view>
+          </view>
+        </view>
+
+        <view class="noData">～没有更多评论了～</view>
+    </view> 
+
+    <!-- 底部 --> 
+    <view class="footer">
+        <view class="leftWrap" bindtap="inputDiscuss">
+            <text class="font_family icon-ziyuan1 Icon1"></text>
+            <text class="des1">评论</text>
+        </view>
+
+        <view class="rightWrap">
+            <text class="font_family icon-ziyuan Icon3" wx:if="{{info.flag === 0}}" catchtap="thumbsUp"></text>
+            <text class="font_family icon-ziyuan Icon2" wx:else catchtap="thumbsUp"></text>
+            <text class="des2" catchtap="thumbsUp">赞</text>
+        </view>
+    </view>
+    
+    <!-- 输入框 -->
+
+    <view class="modal" hidden="{{!modalShow}}" catchtap="closeModal">
+      <view class="panel" catchtap="panelModal">
+            <textarea name="content" class="comment-content" placeholder="写评论" value="{{content}}"  cursor-spacing="110" show-confirm-bar="{{false}}" catchinput="getContent" ></textarea>
+            <view class="send" catchtap="sendMsg">发送</view>
+      </view>
+
+    </view>
+</view>

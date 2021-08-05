@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "巡店报告",
+    "usingComponents": {
+        "patrolShopCard": "/pages/acommon/patrolShop-card/patrolShop-card",
+        "patrolShopAssess": "/pages/acommon/patrolShop-assess/patrolShop-assess"
+    }
+}

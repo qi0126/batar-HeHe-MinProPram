@@ -1,0 +1,304 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view  class="detail {{isStopBodyScroll ? 'scroll-lock' : ''}}">
+    <view class="shopCar">
+        <image src="/images/proList/shopCar.png" class="slide-image" catchtap="goShop" />
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" wx:if='{{propsDataSku.proUrl.length > 0}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular indicator-color="{{color}}" indicator-active-color="{{colorActive}}">
+        <block wx:for="{{propsDataSku.proUrl}}" wx:key="id" wx:for-index="bindex" >
+            <swiper-item wx:if="{{video && bindex ===0}}">
+                <image wx:if="{{coverimgShow}}" src="{{$img + coverimg}}" class="slide-image" catchtap='playVideo' />
+                <video class="slide-video" id="slideVideo" muted show-mute-btn vslide-gesture src="{{$img+video}}"></video>
+            </swiper-item>
+            <swiper-item wx:else>
+                <image src="{{$img + item}}" class="slide-image" catchtap='preImgs' />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <swiper indicator-dots="{{indicatorDots}}" wx:else autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}" indicator-active-color="{{colorActive}}">
+        <block>
+            <swiper-item>
+                <image src="/images/shop/img-noimg.png" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class='pro-detail'>
+        <view class='tit'>
+            {{propsDataSku.proName}}
+            <!--<view class='tit-right'>
+        <view class='tag' catchtap='tagClick'>
+          <image wx:if='{{tagVal === ""}}' src='/images/proList/icon-increase.png' mode='widthFix' style='width: 16rpx; margin-right: 6rpx'></image>
+          <view wx:if='{{tagVal === ""}}'>标签</view>
+          <view wx:else style='color: #a71c20'>{{tagVal}}</view>
+        </view>
+        <image src='/images/proList/icon-help.png ' mode='widthFix' style='width: 24rpx' catchtap='tagQuesClick'></image>
+      </view> -->
+        </view>
+        <view class='batar-detail-list info'>
+            <view class="titOne" style="margin-left:0;margin-bottom:65rpx">#商品描述</view>
+            <view class='info-list' wx:if='{{propsDataSku.proNumber}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>产品编号:</text>
+                    <text>{{propsDataSku.proNumber}}</text>
+                </view>
+            </view>
+            <!-- <view class='info-list' wx:if='{{propsDataSku.effectCode}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>表面工艺:</text>
+                    <text>{{propsDataSku.effectCode}}</text>
+                </view>
+            </view>
+            <view class='info-list' wx:if='{{propsDataSku.carCode}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>车花描述:</text>
+                    <text>{{propsDataSku.carCode}}</text>
+                </view>
+            </view> -->
+            <view class='info-list' wx:if='{{propsDataSku.exterior}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>外观形状:</text>
+                    <text>{{propsDataSku.exterior}}</text>
+                </view>
+            </view>
+            <view class='info-list' wx:if='{{propsDataSku.oneItemsCodeName}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>产品类型:</text>
+                    <text>{{propsDataSku.oneItemsCodeName}}</text>
+                </view>
+            </view>
+            <view class='info-list' wx:if='{{propsDataSku.crowd}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>适合人群:</text>
+                    <text>{{propsDataSku.crowd}}</text>
+                </view>
+            </view>
+            <view class='info-list' wx:if='{{propsDataSku.buckle_code}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>链扣类型:</text>
+                    <text>{{propsDataSku.buckle_code}}</text>
+                </view>
+            </view>
+
+            <view class='info-list' wx:if='{{propsDataSku.patentNumber}}'>
+                <view class='dot'>
+                    <text class='info-list-tit'>专利号:</text>
+                    <text>{{propsDataSku.patentNumber}}</text>
+                </view>
+            </view>
+
+            <view class='info-list'>
+                <view class='dot' wx:if='{{propsDataSku.proDesc}}' style='margin-top: -6rpx'>
+                    <text class='info-list-tit'>生产描述:</text>
+                    <text class='list-one'>{{propsDataSku.proDesc}} </text>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class='purchase'>
+
+        <view class="titOne">#商品规格</view>
+
+        <view class='selewrap' wx:if="{{mode === '2'}}">
+            <view class='selec' wx:for="{{canDo.select}}" wx:key="txt" wx:if="{{item.txt}}" data-index='{{index}}' catchtap='chooseSpec'>
+                <view class='{{item.className}}'>{{item.txt}}</view>
+                <view>
+                    <image wx:if="{{item.checked}}" style="width: 24rpx; height: 14rpx" src='/images/order/icon-down.png'></image>
+                    <image wx:if="{{!item.checked}}" style="width: 24rpx; height: 14rpx" src='/images/order/icon-up.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='bor1'></view>
+        <view class='p-info' wx:if="{{propsDataSku}}">
+          
+            <view hidden="{{mode !== '1'}}">
+                <batar-skuFilter propsData="{{propsDataSku}}" bind:emitSku="getSkuFilter"></batar-skuFilter>
+                <view class="textWrap">
+                    <view class="textTitle">
+                          备注信息
+                          <view class="textTip">(选填)</view>
+                    </view>
+                    <textarea value="{{remark}}" placeholder='请输入备注'  maxlength='200' class="placeholderClass" placeholder-class='def-place' bindblur="getRemarkFun"></textarea>
+                </view>
+                <view class='param' wx-if="{{detailList.length > 0}}">
+                   
+                    <!-- <view class="paramTxt">预计工费(元/克)</view>
+                    <view class='param-list'>
+                        <view class="flex-wrp" style="flex-direction:row;">
+                            <view class="flex-item" wx:for="{{detailList}}" wx:key='name'>
+                                <view class="flex-item-One">{{item.name}}</view>
+                                <view class="flex-item-Two">{{item.value}}</view>
+                            </view>
+                        </view>
+                    </view> -->
+
+                </view>
+                
+                <view class="paramOne" wx-if="{{detailList.length > 0}}">*如有关于工费疑问请咨询客服</view>
+            </view>
+
+            <!-- 富文本内容 -->
+            <view class="wxParseWrap" wx-if="{{textMessage !== ''}}">
+              <view class="titOne" style="margin-left:0;margin-bottom:65rpx">#商品详情</view>
+              <template is="wxParse" data="{{wxParseData: article.nodes}}" />
+            </view>
+        </view>
+        
+    </view>
+
+
+    <!-- 参数 -->
+    <view class="bottom">
+        <view class="modal-box" hidden="{{flag}}" bindtap="hideModal">
+            <view class="modal-body">
+                <view class="modal-content">
+                    <view class="modalOne">
+                        <view class="modalTop">
+                            <span class="fontWeightBold">{{clerkName}}</span>真诚为您服务
+                            <view class="modalTxtOne">Tel:{{clerkPhoneNum}}</view>
+                        </view>
+                        <view class="modalBottom">
+                            <view class="bottomLeft" bindtap="hideModal">暂不咨询</view>
+                            <view class="bottomRight" bindtap="openClerk">拨打电话</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="b-bottom">
+            <view class='bb-left'>
+                <view class="leftOne">
+                    <image src='/images/proList/service.png' mode='widthFix' style='width:35rpx;padding: 0 20rpx;' catchtap='clerkPhone'></image>
+                    <view class="txtTwo">客服</view>
+                </view>
+                <view catchtap='slideCollect' class="leftOne">
+                    <image src='/images/proList/loveOne.png' mode='widthFix' wx:if="{{propsDataSku.isColl == 0}}"></image>
+                    <image src='/images/proList/loveOneS.png' mode='widthFix' wx:if="{{propsDataSku.isColl == 1}}"></image>
+                    <view class="txtTwo">收藏</view>
+                </view>
+            </view>
+            <!-- <button class='btn btn-default bb-right' bindtap='clickAddCart'>加入购物车</button> -->
+            <button class='btn btn-default bb-con' bindtap='clickAddCart'>加入购物车</button>
+
+        </view>
+    </view>
+
+
+    <batar-prop bind:defSerForm='tagConfirm' value='{{tagVal}}' defProp='{{tagStatus}}' tit='{{defRemarkTit}}' place='{{defPlace}}'> </batar-prop>
+    <batar-blank blankStatus='{{tagsDetailStatus}}' blankTit='{{blankTit}}' blankInfo='{{blankInfo}}'></batar-blank>
+
+</view>
+
+<view wx:if="{{popuStatus}}">
+    <!-- <view wx:if="{{popuStatus && (propsDataSkuModal || propsCusTomsDataSkuModal)}}"> -->
+    <batar-popupSku popuStatus="{{popuStatus}}" animationData="{{animationData}}" bind:popConfirm="skuPop" bind:close="closePopupSku">
+        <view class='con-wrap'>
+            <view class='con-wrap-nomal'></view>
+
+            <view class='con-wrap-top'>
+                <view class='tit divThree'>
+                    <view class='proimg'>
+                        <image mode='widthFix' src='{{$img + propsDataSku.proUrl[0]}}'></image>
+                    </view>
+                    <view class='txtwrap'>
+                        <view class='txtbt'>{{propsDataSku.proName}}</view>
+                        <view class='txtno'>
+                            <text>商品编号：</text>
+                            <text>{{propsDataSku.proNumber}}</text> </view>
+                    </view>
+                </view>
+                <view catchtap='closePopupSku' class='conw-img-close'>
+                    <image src='/images/shop/icon-close.png' style='width: 32rpx; height: 32rpx'></image>
+                </view>
+            </view>
+
+            <scroll-view scroll-y class='scroll-wrap'>
+                <view class='list'>
+                    <view hidden="{{mode !== '1'}}">
+                        <batar-skuFilter mode='back' propsData="{{propsDataSkuModal}}" id="skuFilter" bind:emitSku="getSkuFilterModal"></batar-skuFilter>
+                        <view class="textWrap">
+                            <view class="textTitle">
+                                备注信息
+                                <view class="textTip">(选填)</view>
+                            </view>
+                            <textarea value="{{remark}}" placeholder='请输入备注' maxlength='200' class="placeholderClass" placeholder-class='def-place' bindblur="getRemarkFun"></textarea>
+                        </view>
+                        <view class='param' wx-if="{{detailList.length > 0}}">
+                        
+                            <!-- <view class="paramTxt">预计工费(元/克)</view>
+                            <view class='param-list'>
+                                <view class="flex-wrp" style="flex-direction:row;">
+                                    <view class="flex-item" wx:for="{{detailList}}" wx:key='name'>
+                                        <view class="flex-item-One">{{item.name}}</view>
+                                        <view class="flex-item-Two">{{item.value}}</view>
+                                    </view>
+                                </view>
+                            </view> -->
+
+                        </view>
+
+                        <view class="paramOne" wx-if="{{detailList.length > 0}}">*如有关于工费疑问请咨询客服</view>
+                    </view>
+                    <!-- <view hidden="{{mode !== '2'}}">
+            <batar-customSkuFilter mode='back' showCusTxt="{{false}}" propsData="{{propsCusTomsDataSkuModal}}" skuObj="{{customsSkuObj}}" bind:emitCusTomSku="getCusTomSkuFilterModal"></batar-customSkuFilter>
+          </view> -->
+
+                    <!-- <view class='remark' wx:if="{{showInputStatus === 1}}">
+            <view class='remark-tit'>备注信息</view>
+            <textarea bindinput='getRemark' class='textarea'></textarea>
+          </view> -->
+                    <view style='height: 280rpx;'></view>
+                </view>
+            
+            </scroll-view>
+
+        </view>
+        <view class="bottom">
+        
+            <view class='new-up-wrap'>
+                <cover-view class="new-up-wrap_left" wx:if="{{allCount}}">
+                    <cover-view>预计总克重</cover-view>
+                    <cover-view class="wrap_left-weight">{{allCount}}g</cover-view>
+                </cover-view>
+                <view wx:else></view>
+                <view wx:if="{{showInputStatus === 1}}">
+                    <view class='pc-right'>
+                        <view class='c-handle'>
+                            <image class='hand-decrease' class='act' src='/images/proList/icon-decrease.png' style='width: 30rpx; height: 1px' bindtap='decrease'></image>
+                            <input type='number' class='hand-con' bindinput='inputConfirm' value='{{num}}'></input>
+                            <image class='hand-increase' class='act' src='/images/proList/icon-increase.png' mode='widthFix' style='width: 30rpx' bindtap='increase'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="b-bottomTwo">
+                <!-- <cover-view class="divOne">
+                    <cover-view>预计总工费</cover-view>
+                    <cover-view class="divOne_price">¥{{sumPrice}}</cover-view>
+                </cover-view> -->
+                <!-- <view class="divOne">预计总工费<view>¥{{sumPrice}}</view></view> -->
+                <button class='btn btn-default bb-right btnTwo' bindtap='createdParams'>确定</button>
+            </view>
+        </view>
+    </batar-popupSku>
+
+
+</view>
+
+<batar-dialog show="{{canDo.dialog.propShow}}" bind:popuHide="hideDialog" bind:popuShow="showDialog">
+    <view class='candotit'>
+        <view class='candotit-tit'>{{canDo.dialog.txt}}</view>
+        <view catchtap='hideDialog' class='img-close'>
+            <image src='/images/shop/icon-close.png' style='width: 32rpx; height: 32rpx'></image>
+        </view>
+    </view>
+    <view class='candoinfo'>
+        <scroll-view scroll-y style='height: 440rpx'>
+            <view wx:for="{{canDo.dialog.list}}" wx:key="txt" class='candoinfo-item {{item.checked && "on"}} {{item.disabled &&"disabled"}} {{item.type ===1 ? "single" : "scope"}}' data-item='{{item}}' data-index='{{index}}' catchtap='dialogSpecClick'>{{item.txt}}</view>
+        </scroll-view>
+    </view>
+</batar-dialog>

@@ -1,0 +1,38 @@
+.patrolShopWrap{}
+
+/* 导航 */
+.nav{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height:97rpx;
+  background:rgba(255,255,255,1);
+  border-top:1rpx solid #F2F2F2;
+}
+
+.navLi{
+  flex: 1;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  text-align: center;
+}
+
+.active{
+  color: #E1671D;
+}
+
+
+/* 内容 */
+.main{
+  padding: 16rpx 15rpx 0rpx 11rpx;
+}
+
+.noData{
+  text-align: center;
+  margin-top: 142rpx;
+  margin-bottom: 60rpx;
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(149,149,149,1);
+}

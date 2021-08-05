@@ -1,0 +1,96 @@
+
+page {
+
+}
+
+.imgWrap{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90rpx;
+  border-top:#f3f3f3 solid 1rpx;
+  left:0;
+  bottom:0;
+  width: 100%;
+  height: 98rpx;
+  padding-top: 30rpx;
+  background: #fff
+}
+.imgWrap .phoneIcon{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.imgWrap .contact{
+  font-size:26rrpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+/*拨打业务员电话弹出层开始*/
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0rpx;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  z-index:1000;
+}
+
+
+.modal-body{
+  margin-top:388rpx;
+  position:relative;
+  }
+
+.modal-content{
+  margin:0 10% 0 11%;
+  overflow: hidden;}
+
+.modal-content{
+  width: 100%;
+}
+.modal-content .fenxiang{
+  width: 100%;
+  height: 40%;
+}
+.modalOne{
+  width:573rpx;
+  height:278rpx;
+  background: #fff;
+  color:#333;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-weight:bold;
+  line-height: 72rpx;
+  padding-top:40rpx;
+}
+.modalTxtOne{
+  color:#999999;
+  font-size:30rpx;
+}
+.modalTop{
+  height:175rpx;
+}
+.modalBottom{
+  height:103rpx;
+  border-top:1rpx solid #E7E7E7;
+  color:#000000;
+  font-size:28rpx;
+  line-height: 103rpx;
+  display: flex;
+  font-weight: bold;
+}
+.bottomLeft{
+  width:50%;
+}
+.bottomRight{
+  width:50%;
+  color:#E86800;
+}
+
+/*拨打业务员电话弹出层结束*/

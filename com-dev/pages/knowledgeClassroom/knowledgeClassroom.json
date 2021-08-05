@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "知识课堂",
+    "usingComponents": {
+      "school-searchTop": "/pages/acommon/schoolSearchTop/schoolSearchTop"
+    }
+}

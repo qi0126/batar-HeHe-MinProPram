@@ -1,0 +1,31 @@
+<view class='collect'>
+  <!-- 搜索 -->
+    <view class='upperPart'>
+      <view class='searchCont'>
+        <image src="/images/index/searchIcon.png" mode='widthFix' class='searchIcon' catchtap='closeFun'></image>
+        <input placeholder="搜索您收藏的产品" class='inputBox' focus="{{true}}" placeholder-class="placeholder" bindconfirm="confirmFun" bindinput='change' value='{{inputValue}}'  confirm-type="search" ></input>
+        <image src="/images/index/closeIcon.png" mode='widthFix' class='closeIcon' catchtap='closeFun'></image>
+      </view>
+      <view class='cancel' catchtap='goSearch'>搜索</view>
+    </view>
+  <view wx:if="{{result.rowSize > 0}}">
+    <!-- 产品 -->
+    <collectionItem wx:for="{{list}}" wx:key="id" data-item="{{item}}" productData="{{item}}" bind:cancelCollect="slideCollect" catchtap="goDetail"></collectionItem>
+
+    <view class='loadmore' hidden='{{list.length <= 4}}'>
+      <view class="loading_box" hidden="{{loadMore}}">
+        <view class="loading_rotate_cube_parent">
+          <view class="loading_rotate_cube"></view>
+        </view>
+      </view>
+      <text hidden="{{!loadMore}}">没有更多数据了</text>
+    </view>
+  </view>
+
+  <view class='nothing' wx:else>
+    <image src='/images/me/img-nocollect.png' mode='widthFix' style='width: 170rpx; margin-top: 360rpx; margin-bottom: 60rpx'></image>
+    <view hidden="{{initState}}">~ 亲，没有找到符合条件的商品 ~</view>
+  </view>
+
+  <!-- <image class='backtop' wx:if="{{floorstatus}}" src='/images/icon-up.png' catchtap='backTop'></image> -->
+</view>

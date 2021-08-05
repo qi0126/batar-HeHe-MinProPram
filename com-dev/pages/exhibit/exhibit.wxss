@@ -1,0 +1,190 @@
+.exhibit {
+  padding-bottom: 170rpx;
+}
+
+.list {
+  width: 750rpx;
+  overflow: hidden;
+  margin-top: 10rpx
+}
+
+.item {
+  box-sizing: border-box;
+  min-height: 140rpx;
+  background: #fff;
+  border: 1px solid #f5f5f5
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  transition: all 0.4s;
+  transform: translateX(140rpx);
+  margin-left: -140rpx;
+  min-height: 136rpx;
+}
+
+.i-left {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 24rpx;
+  text-align: center; 
+}
+
+.i-cont {
+   flex: 5;
+   margin-top: 24rpx;
+   margin-left: 40rpx;
+}
+
+.tel {
+   font-size: 28rpx;
+}
+
+.c-addr {
+  margin-top: 10rpx;
+  color: #999;
+  font-size: 24rpx
+}
+
+.ic-edit {
+  flex: 1;
+  display: flex;
+  padding-right: 40rpx;
+  flex-direction: column;
+  align-items: flex-end
+}
+
+.ic-edit > image {
+  margin-top: 24rpx;
+}
+
+.ic-edit > view {
+  margin-top: 10rpx;
+  color: #e86800;
+  font-size: 24rpx
+}
+
+.ir-del {
+  background-color: #e86800;
+  width: 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   -webkit-transform: translateX(140rpx);
+  transform: translateX(140rpx); 
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.lf-default {
+  margin: 0 auto;
+  margin-top: 18rpx;
+  width: 60rpx;
+  color: #e86800;
+  font-size: 18rpx;
+  line-height: 26rpx;
+  border: 1px solid #e86800; 
+}
+
+.touch-move-active .content, .touch-move-active .ir-del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+} 
+
+.nothing {
+  display: flex;
+  flex-direction: column;
+  margin-top: 380rpx;
+  align-items: center;
+  color: #b3b3b3;
+  font-size: 28rpx;
+}
+
+.nothing > image {
+  margin-bottom: 40rpx;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 26rpx 30rpx;
+  background: #fff;
+} 
+
+.bottom > button {
+  color: #e86800;
+  border: 1px solid #e86800;
+  background: #fff;
+  line-height: 82rpx;
+}
+
+.bottom > button text {
+  font-size: 28rpx;
+}
+
+/* 搜索  */
+.screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  height: 76rpx;
+  color: #666;
+  background: #fff;  
+}
+
+.screen > view {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid #ccc;
+}
+
+.screen > view:first-child {
+  border: none
+}
+
+.screen > view image {
+  margin-left: 10rpx;
+}
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  min-height: 88rpx;
+  background: #fafafa;
+}
+
+.sear-con {
+  background: #fafafa
+}
+
+.sear {
+  border: 1px solid #E6E6E6
+
+}
+
+.options .picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 210rpx;
+  height: 48rpx;
+  padding: 5rpx 14rpx;
+  border: 1px solid #999;
+  border-radius: 4rpx;
+  color: #666;
+  font-size: 24rpx;
+  background: #fff;
+}

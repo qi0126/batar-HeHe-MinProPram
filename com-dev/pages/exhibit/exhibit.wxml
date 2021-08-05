@@ -1,0 +1,87 @@
+<view class="exhibit">
+  <view class='screen' catchtap='searOrderSlide'>
+    <view>
+      <text>活动搜索</text> 
+      <image src='{{searOrder? imgSlide.b: imgSlide.a}}' mode='widthFix' style='width: 20rpx'></image>
+    </view>
+    <view catchtap='searTimeSlide'>
+      <text>活动时间</text>
+      <image src='{{searTime? imgSlide.b: imgSlide.a}}' mode='widthFix' mode='widthFix' style='width: 20rpx'></image>
+    </view>
+  </view>
+
+  <view class='sizerwrap'>
+    <view class='options' hidden='{{!searTime}}'>
+      <view class='date'>
+        <picker mode="date" value="{{date}}" bindchange="startDateEv">
+          <view class="picker">
+            {{startDate}}
+            <image src='/images/shop/icon-date.png' mode='widthFix' style='width: 30rpx'></image>
+          </view>
+        </picker>
+      </view>
+      <text>至</text>
+      <view class='date'>
+        <picker mode="date" value="{{date}}" bindchange="endDateEv">
+          <view class="picker">
+            {{endDate}}
+            <image src='/images/shop/icon-date.png' mode='widthFix' style='width: 30rpx'></image>
+          </view>
+        </picker>
+      </view>
+      <text catchtap='searTimeTrue'>确定</text>
+    </view>
+    <view class='optionslist' hidden='{{!searOrder}}'>
+      <view class='sear-con'>
+        <view class='sear'>
+          <image src='/images/icon-search.png' style='width: 30rpx' mode='widthFix'></image>
+          <input placeholder='搜索' placeholder-class='sear-place' bindinput='change' value='{{searValue}}'></input>
+          <image src='/images/icon-sear-false.png' style='width: 30rpx' mode='widthFix' catchtap='deleSear'></image>
+        </view>
+        <text catchtap='search'>搜索</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='list' wx:if="{{result.rowSize}}">
+    <view class='item  {{item.isTouchMove ? "touch-move-active" : ""}}' wx:key='applicantid' wx:for='{{list}}' data-item='{{item}}' data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" catchtap='goExDetail'>
+      <view class='content'>
+        <view class='i-cont'>
+          <view class='tel'>{{item.exhibitName}}</view>
+          <view class='c-addr'>{{item.exhibitAdr}}</view>
+        </view>
+        <view class='ic-edit' wx:if='{{item.statue}}'>
+          <image src='/images/shop/icon-right.png' mode='widthFix' style='width: 20rpx'></image>
+          <view>{{item.totalWeight}} g</view>
+        </view>
+        <view class='ir-del' data-item='{{item}}' data-index='{{index}}' catchtap='deleAddress'>
+          <image src='/images/shop/icon-del.png' mode='widthFix' style='width: 36rpx'></image>
+        </view>
+      </view>
+    </view>
+    <view class='loadmore' hidden='{{result.rowSize < 10}}'>
+      <view class="loading_box" hidden="{{loadMore}}">
+        <view class="loading_rotate_cube_parent">
+          <view class="loading_rotate_cube"></view>
+        </view>
+      </view>
+      <text hidden="{{!loadMore}}">没有更多数据了</text>
+    </view>
+  </view>
+
+  <view class='nothing' wx:else>
+    <image src='/images/exhibit/img-noexhibit.png' mode='widthFix' style='width: 125rpx;'></image>
+    <view>暂无活动</view>
+  </view>
+
+  <view class='bottom'>
+    <button class='btn btn-default' bindtap='addExhibit' wx:if="{{result.rowSize}}">
+      +
+      <text>新增活动</text>
+    </button>
+    <button class='btn btn-default' bindtap='addExhibit' wx:else>
+      +
+      <text>申请展销活动</text>
+    </button>
+  </view>
+</view>

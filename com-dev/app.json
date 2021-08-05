@@ -1,0 +1,79 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/me/me",
+        "pages/shop/shop",
+        "pages/detailSuit/detailSuit",
+        "pages/login/login",
+        "pages/brandReferSearch/brandReferSearch",
+        "pages/knowledgeSearch/knowledgeSearch",
+        "pages/inforClassroomDetail/inforClassroomDetail",
+        "pages/patrolShop/patrolShop",
+        "pages/patrolShopDetail/patrolShopDetail",
+        "pages/textContent/textContent",
+        "pages/discuss/discuss",
+        "pages/classroomSearch/classroomSearch",
+        "pages/inforClassroom/inforClassroom",
+        "pages/knowledgeClassroom/knowledgeClassroom",
+        "pages/brand/brand",
+        "pages/proList/proList/proList",
+        "pages/order/order",
+        "pages/proList/proListSearch/proListSearch",
+        "pages/collect/collect",
+        "pages/search/search",
+        "pages/orderDetails/orderDetails",
+        "pages/detail/detail",
+        "pages/classifly/classifly",
+        "pages/address/address",
+        "pages/editAddress/editAddress",
+        "pages/setting/setting",
+        "pages/changePassWord/changePassWord",
+        "pages/collectSearch/collectSearch",
+        "pages/themeRich/themeRich",
+        "pages/seriesProlist/seriesProlist"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "和合百泰",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#F09059",
+        "color": "#FBDBC9",
+        "backgroundColor": "#222222",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/images/index/indexIcon.png",
+                "selectedIconPath": "/images/index/indexIconS.png"
+            },
+            {
+                "pagePath": "pages/classifly/classifly",
+                "text": "分类",
+                "iconPath": "/images/index/indexFeng.png",
+                "selectedIconPath": "/images/index/indexFengS.png"
+            },
+            {
+                "pagePath": "pages/brand/brand",
+                "text": "品牌",
+                "iconPath": "/images/index/indexBrand.png",
+                "selectedIconPath": "/images/index/indexBrandS.png"
+            },
+            {
+                "pagePath": "pages/shop/shop",
+                "text": "购物车",
+                "iconPath": "/images/index/indexShop.png",
+                "selectedIconPath": "/images/index/indexShopS.png"
+            },
+            {
+                "pagePath": "pages/me/me",
+                "text": "我的",
+                "iconPath": "/images/index/indexMe.png",
+                "selectedIconPath": "/images/index/indexMeS.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

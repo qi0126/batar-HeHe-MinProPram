@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "填写地址",
+    "usingComponents": {
+        "batar-layer": "/pages/acommon/layer/layer",
+        "batar-blank": "/pages/acommon/blank/blank",
+        "batar-propShow": "/pages/acommon/propShow/propShow",
+        "batar-exList": "/pages/acommon/exList/exList",
+        "batar-propDef": "/pages/acommon/propDef/propDef",
+        "batar-dialog": "/pages/acommon/dialog/dialog"
+    }
+}

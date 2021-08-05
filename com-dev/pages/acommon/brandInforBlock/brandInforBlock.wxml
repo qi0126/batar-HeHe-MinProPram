@@ -1,0 +1,51 @@
+<view class="brandWrap">
+    <!-- 搜索 -->
+    <view class="schoolSearchWrap">
+        <view class="schoolSearch" catchtap="goSearch">
+            <text class="font_family icon-xinbaniconshangchuan- searchIcon"></text>
+            <view class="searchDes">搜索</view>
+        </view>
+        <view class="picker">
+            <picker mode="date" value="{{date}}" fields="month" start="2019-01-01"  bindchange="goTime" bindcancel="cancelFun">
+                <view class="releaseTime" bindchange="goTime">
+                    发布时间 {{date}}
+                    <i class="font_family icon-ziyuan2 rightArrow"></i>
+                </view>
+            </picker>
+        </view>
+
+    </view> 
+
+    <!-- 品牌列表 -->
+    <view class="brandUl">
+
+        <view class="brandLi" wx:for="{{brandReferLists}}" wx:key="id" data-item="{{item}}" catchtap="goBrandRefer">
+            <view class="imgWrap">
+                <image mode="widthFix" src="{{$img + item.imgUrl}}"></image>
+            </view>
+            <view class="rightWrap">
+                <view class="desTitle">{{item.title}}</view>
+                <view class="desCont">
+                    {{item.referTitle}}
+                </view>
+                <view class="desTime">{{item.createTime}}日发布</view>
+            </view>
+        </view>
+
+
+    </view>
+
+    <view wx:if="{{brandReferLists.length === 0}}" class="noData">
+       ～没有更多内容了～
+    </view>
+
+    <view class='loadmore' wx:if="{{brandReferLists.length > 0}}">
+        <view class="loading_box" hidden="{{loadMore}}">
+            <view class="loading_rotate_cube_parent">
+                <view class="loading_rotate_cube"></view>
+            </view>
+        </view>
+        <view class="noData" hidden="{{!loadMore}}">～没有更多内容了～</view>
+    </view>
+
+</view>

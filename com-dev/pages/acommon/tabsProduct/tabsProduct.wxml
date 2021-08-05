@@ -1,0 +1,16 @@
+<view class='container'>
+    <scroll-view class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+        <block wx:for="{{menuList}}" wx:key="index">
+            <view class="tab-item " wx:if="{{item.name === '全部'}}" style="width:calc({{100/count}}% - 18rpx)" data-item="{{item}}" data-current="{{index}}" bindtap='clickMenu'>
+                <view class="item {{currentTab == index ? 'active' : ''}}">
+                    {{item.name}}
+                </view>
+            </view>
+            <view class="tab-item " wx:else style="width:{{100/count}}%" data-item="{{item}}" data-current="{{index}}" bindtap='clickMenu'>
+                <view class="item {{currentTab == index ? 'active' : ''}}">
+                    {{item.name}}
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>

@@ -1,0 +1,279 @@
+.txt12 {
+    font-size: 12rpx;
+}
+
+.txt14 {
+    font-size: 14rpx;
+}
+
+.txt16 {
+    font-size: 16rpx;
+}
+
+.txt18 {
+    font-size: 18rpx;
+}
+
+.txt24 {
+    font-size: 24rpx;
+}
+
+.txt28 {
+    font-size: 28rpx;
+}
+
+.txt32 {
+    font-size: 32rpx;
+}
+
+.txtLeft {
+    text-align: left;
+}
+
+.txtRight {
+    text-align: right;
+}
+
+.txtBold {
+    font-weight: bold;
+}
+
+.right20 {
+    margin-right: 20rpx;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.txtYellow {
+    color: #f29924;
+}
+
+.txtOrange {
+    color: #f26d0f;
+}
+
+.txtRed {
+    color: #9e0029;
+}
+
+.txtLogo {
+    color: #9e0029;
+}
+
+.txtHui {
+    color: #8a9199;
+}
+
+.txtBlack {
+    color: #232426;
+}
+
+.lineHeight34 {
+    line-height: 34rpx;
+}
+
+.lineHeight60 {
+    line-height: 60rpx;
+}
+
+.width75 {
+    width: 75rpx;
+}
+
+.width70 {
+    width: 70rpx;
+}
+
+.width80 {
+    width: 80rpx;
+}
+
+.width90F {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.width90 {
+    width: 90rpx;
+}
+
+.width100 {
+    width: 100rpx;
+}
+
+.width110 {
+    width: 110rpx;
+}
+
+.width130 {
+    width: 130rpx;
+}
+
+.width160 {
+    width: 160rpx;
+    margin: 5rpx 10rpx;
+}
+
+.width170 {
+    width: 170rpx;
+}
+
+.width240 {
+    width: 240rpx;
+}
+
+.top10 {
+    padding: 10rpx 0;
+}
+
+.top20 {
+    padding: 20rpx 0;
+}
+
+.mtop50 {
+    margin-top: 50rpx;
+}
+
+.mtop20 {
+    margin-top: 20rpx;
+}
+
+.mtop64 {
+    margin-top: 64rpx;
+}
+
+.mtop80 {
+    margin-top: 80rpx;
+}
+
+.mtop100 {
+    margin-top: 100rpx;
+}
+
+.mtop168 {
+    margin-top: 168rpx;
+}
+
+.left10 {
+    margin-left: 10rpx;
+}
+
+.cpointer {
+    cursor: pointer;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.left30 {
+    width: 30%;
+    color: #808080;
+    font-size: 28rpx;
+    min-height: 87rpx;
+    line-height: 87rpx;
+    font-weight: bold;
+}
+
+.right70 {
+    width: 70%;
+    color: #242526;
+    font-size: 28rpx;
+    min-height: 87rpx;
+    line-height: 87rpx;
+    font-weight: bold;
+}
+
+.left30One {
+    width: 33%;
+    color: #242526;
+    font-size: 28rpx;
+    min-height: 87rpx;
+    line-height: 87rpx;
+    font-weight: bold;
+}
+
+.right70One {
+    width: 70%;
+    color: #808080;
+    font-size: 28rpx;
+    min-height: 87rpx;
+    line-height: 87rpx;
+    font-weight: bold;
+}
+
+.right70One input {
+    margin-top: 10rpx;
+}
+
+.lineTop {
+    border-top: 1rpx solid #e1e4e6;
+}
+
+.lineBottom {
+    border-bottom: 1rpx solid #e1e4e6;
+}
+
+
+.borderRadius40 {
+    border-radius: 40px;
+}
+
+.bRed {
+    background: #bf1d47;
+    color: #fff;
+}
+
+.lineRightHui {
+    border-right: #edeff2 1rpx solid;
+}
+
+.lineLeftHui {
+    border-left: #edeff2 1rpx solid;
+}
+
+.lineRightRed {
+    border-right: #bf1d47 1rpx solid;
+}
+
+.lineLeftRed {
+    border-left: #bf1d47 1rpx solid;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.my_order {
+    width: 14rpx;
+    height: 28rpx;
+}
+
+.starIcon {
+    width: 36rpx;
+    height: 34rpx;
+    margin: 0 4rpx;
+}
+
+.yesIcon {
+    width: 32rpx;
+    height: 20rpx;
+}
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+.displayInBlock {
+    display: inline-block;
+}

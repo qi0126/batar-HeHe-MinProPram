@@ -1,0 +1,46 @@
+.productWrap{
+  /* height:410rpx; */
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 6rpx 0px rgba(38,84,160,0.08);
+  margin-bottom: 16rpx;
+  padding: 27rpx 36rpx;
+}
+
+/* 上 */
+.productWrap .topWrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderNumber{
+  font-size:26rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
+
+.timeStyle{
+  color: #666;
+  font-size: 20rpx;
+}
+
+
+
+/* 下 */
+.bottomWrap{
+  font-size:26rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90rpx;
+}
+
+
+.cancelOrder{
+  font-size:26rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(232,104,0,1);
+}

@@ -1,0 +1,87 @@
+<view class="me">
+  <view class='topTools'>
+    <image src='/images/me/meTool.png'  catchtap='goLogin'></image> 
+  </view>
+
+  <view class='topLogo'>
+    <view class='logo'>
+      <!-- <image src='{{result.logoUrl ? ($img + result.logoUrl) : logo}}' style='width: 150rpx; height: 150rpx'></image>  -->
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='tit' catchtap='goSetting'>
+      <open-data type="userNickName"></open-data>
+      <!-- <text>{{userName}}</text> -->
+      <!-- <text>{{result.abbr || result.companyName}}</text> -->
+      <!-- <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取用户信息</button> -->
+    </view>
+  </view>
+
+  <view class='top'> 
+
+    <view class='order'>
+        <view class="myOrder" catchtap='goOrder' data-item='1' data-orderStatus='1'>
+            <image src='/images/me/order-all.png' style='width:42rpx;height:42rpx'></image><text>我的订单</text>
+            <view class="line"></view>
+        </view>
+        <view catchtap='goOrder' data-item='1' data-orderStatus='1'><image src='/images/me/order-wait.png' style='width:51rpx;height:47rpx'></image><text>待审核</text></view>
+        <view catchtap='goOrder' data-item='1' data-orderStatus='2'><image src='/images/me/order-pass.png' style='width: 42rpx;height:42rpx'></image><text>已通过</text></view>
+        <view catchtap='goOrder' data-item='1' data-orderStatus='3'><image src='/images/me/order-cancel.png' style='width:51rpx;height:47rpx'></image><text>已取消</text></view>
+         <view catchtap='goOrder' data-item='1' data-orderStatus='4'><image src='/images/me/order-nopass.png' style='width:51rpx;height:47rpx'></image><text>未通过</text></view> 
+    </view>
+  </view> 
+
+   <view class='bottom'>
+    <view class='bottomTwo' catchtap='goCollect'>
+      <view class="leftWrap">
+          <image src='/images/me/meLoveOne2.png' mode='widthFix' style='width: 34rpx '></image>
+          <text>我的收藏</text>
+      </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+
+    <view class='bottomOne' catchtap='goPatrolShop'>
+     <view class="leftWrap">
+          <image src='/images/me/label.png' mode='widthFix' style='width: 34rpx '></image>
+          <text>巡店记录</text>
+     </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+    
+
+    <view class='bottomOne' catchtap='goSetting'>
+     <view class="leftWrap">
+          <image src='/images/me/meMan2.png' mode='widthFix' style='width: 34rpx '></image>
+          <text>个人信息</text>
+     </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+
+    <view class='bottomOne' catchtap='goAddress'>
+      <view class="leftWrap">
+          <image src='/images/me/meAddress2.png' mode='widthFix' style='width: 32rpx '></image>
+          <text>收货地址</text>
+      </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+    <view class='bottomOne' catchtap='clerkPhone'>
+     <view class="leftWrap">
+        <image src='/images/me/meService2.png' mode='widthFix' style='width: 34rpx '></image>
+        <text>联系我们</text>
+     </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+    <view class='bottomOne'  catchtap='goLogin'>
+     <view class="leftWrap">
+          <image src='/images/me/meTool2.png' mode='widthFix' style='width: 34rpx '></image>
+          <text>切换账号</text>
+     </view>
+      <image src='/images/me/meJian.png' mode='widthFix' class="imgOne"></image>
+    </view>
+  </view> 
+
+  
+</view>
+
+<view hidden="{{flag}}">
+   <contactUs bind:hideModal="hideModal" clerkName="{{clerkName}}" clerkPhoneNum="{{clerkPhoneNum}}"></contactUs>
+</view>

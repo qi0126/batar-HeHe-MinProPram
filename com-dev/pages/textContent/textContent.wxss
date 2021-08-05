@@ -1,0 +1,22 @@
+@import '/svg/iconfont.wxss';
+
+.backHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20rpx;
+  right: 24rpx;
+  z-index: 100;
+  width: 70rpx;
+  height: 70rpx;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 50rpx;
+  color: #fff;
+}
+
+
+.backHome > view {
+  margin-top: -4rpx;
+  font-size: 36rpx;
+}

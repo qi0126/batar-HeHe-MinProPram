@@ -1,0 +1,15 @@
+<view class="replyWrap">
+    <view class="replyTitleWrap">
+        <view class="replyTitle">和合回复</view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="replyDes" wx:if="{{info.feedBackContnt}}">
+        <view class="replyLeft">回复详情</view>
+        <view class="replyRight">{{info.feedBackContnt}}</view>
+
+    </view> 
+
+    <!-- 无数据 -->
+    <view class="replyNoData" wx:else>对方尚未回复～</view>
+</view>

@@ -1,0 +1,261 @@
+.infoWrap{
+  
+}
+
+.infoUL{
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+
+
+/* 头部 */
+
+.topWrap{
+  font-size:20rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  padding: 38rpx 37rpx 33rpx 34rpx;
+  display: flex;
+}
+
+.oneItemWrap{
+  width: 240rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.topWrap .oneItem{
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+}
+
+.oneItemWrap .openStyle{
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10rpx solid;
+  border-color: #000 transparent transparent transparent;
+  margin-top: 14rpx;
+    margin-left: 13rpx;
+
+}
+
+.oneItemWrap .closeStyle{
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10rpx solid;
+  border-color:transparent transparent transparent #000;
+  margin-left: 13rpx;
+}
+
+.topWrap .twoItem{
+  color:rgba(232,104,0,1);
+  /* margin-left: 180rpx; */
+  display: flex;
+  align-items: center;
+  /* width: 130rpx; */
+}
+
+.twoItem .number{
+  font-size:30rpx;
+  font-weight:500;
+  /* margin-right: 11rpx; */
+}
+
+.topWrap .threeItem{
+  color:rgba(232,104,0,1);
+  display: flex;
+  align-items: center;
+  /* width: 160rpx; */
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.threeItem .number{
+  font-size:30rpx;
+  font-weight:500;
+  margin: 0rpx 5rpx;
+}
+
+.topWrap .fourItem{
+  color:rgba(232,104,0,1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* width: 160rpx; */
+}
+
+.fourItem .number{
+  font-size:30rpx;
+  font-weight:500;
+  margin: 0rpx 5rpx;
+}
+
+/* 产品项 */
+
+/* 底部线 */
+.infoLIWrap .lineWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.infoLIWrap .bottomLine{
+  border-top:1rpx solid rgba(227,227,227,1);
+  width: 90%;
+  height: 1rpx;
+}
+
+
+.infoLI{
+  margin:0rpx 38rpx;
+  /* border-top:1rpx solid rgba(228,228,228,1); */
+  padding: 53rpx 9rpx 38rpx 37rpx;
+  display: flex;
+}
+
+.infoLIWrap:nth-child(2) .infoLI{
+  border-top:1rpx solid rgba(228,228,228,1);
+}
+
+.infoLIWrap:last-child .bottomLine{
+   /* border:1rpx solid red; */
+   /* background: red; */
+   display: none;
+}
+
+.infoLI .imgWrap{
+  width:189rpx;
+  height:211rpx;
+  /* background: red; */
+  margin-right: 38rpx;
+  overflow: hidden;
+}
+
+.imgWrap image{
+  width:100%;
+  height:100%;
+}
+
+/* 信息描述 */
+
+.desWrap{
+    flex: 1;
+    font-family:PingFangSC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.topProductWrap{
+
+}
+
+.topProductWrap .pName{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+.topProductWrap .pNumber{
+  font-size:26rpx;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  margin-top: 12rpx;
+}
+
+.bottomProductWrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottomProductWrap .pCost{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+.bottomProductWrap .pTotal{
+  font-size:26rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+.arrowWrap{
+    margin-left: 10rpx;
+    /* width: 21rpx;
+    height: 21rpx; */
+}
+
+.pTotal{
+  display: flex;
+  /* align-items: center */
+}
+
+
+.arrowWrap image{
+  width:100%;
+  height:100%;
+  margin-left: 2rpx;
+}
+
+
+/* SKU数据 */
+.skuWrap{
+  background:rgba(248,248,248,1);
+  border-top:1rpx solid rgba(227,227,227,1);
+  /* border-bottom:1rpx solid rgba(227,227,227,1); */
+  padding: 0rpx 17rpx 51rpx 17rpx;
+  /* box-shadow:0rpx 1rpx 0rpx rgba(16,46,115,0.2); */
+
+}
+
+.skuTable{
+  background: #fff;
+  font-family:PingFangSC;
+  padding: 25rpx 12rpx 9rpx 15rpx;
+  box-shadow:0rpx 2rpx 4rpx 0rpx rgba(21,53,110,0.15);
+}
+
+.skuTable .skuTh{
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(232,104,0,1);
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 13rpx;
+}
+
+.skuTable .skuTr{
+  padding: 22rpx 0rpx;
+  display: flex;
+  justify-content: space-around;
+  border-top:1rpx solid rgba(233,233,233,1);
+}
+
+
+/* 备注信息 */
+.remarksWrap{
+  /* padding: 19rpx 41rpx 43rpx 80rpx */
+  padding: 19rpx 36rpx 43rpx; 
+  display: flex;
+  background: #FFFFFF;
+  /* border-top:1rpx solid#e6e6e6; */
+}
+
+.remarkTitel{
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(235,118,23,1);
+  width: 100rpx;
+}
+
+.remarkCont{
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height: 36rpx;
+}

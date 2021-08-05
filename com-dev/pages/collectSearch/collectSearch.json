@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 300,
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "collectionItem": "/pages/acommon/collectionItem/collectionItem"
+  }
+}

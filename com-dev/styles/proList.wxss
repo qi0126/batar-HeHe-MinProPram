@@ -1,0 +1,27 @@
+/* 商品列表样式  */
+.list-info {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  border-radius: 60rpx;
+  margin-left: 36rpx;
+  margin-bottom: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+  height: 60rpx;
+  border: 1px solid #e6e6e6;
+  min-width: 140rpx;
+}
+
+.list-item.active {
+  color: white;
+  background: #e86800;
+}

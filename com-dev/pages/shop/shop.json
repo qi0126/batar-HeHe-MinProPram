@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "购物车",
+    "usingComponents": {
+        "batar-dialog": "/pages/acommon/dialog/dialog"
+    }
+}

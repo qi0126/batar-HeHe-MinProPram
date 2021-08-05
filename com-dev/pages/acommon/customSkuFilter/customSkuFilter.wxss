@@ -1,0 +1,186 @@
+@import '/styles/list.wxss';
+
+.p-info {
+  background: #fff;
+}
+
+.size-tit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 26rpx;
+}
+
+.size-tit > .rightcus {
+  color: #A71C20;
+  font-size: 24rpx;
+}
+
+.p-sizet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 26rpx;
+  min-height: 98rpx;
+}
+
+.ps-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ps-item {
+  position: relative;
+  margin: 0 20rpx;
+  line-height: 60rpx;
+  min-width: 60rpx;
+  font-size: 24rpx;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 60rpx;
+}
+
+.ps-item .badge-active, .ps-item .badge{
+  top: -10rpx;
+  right: -10rpx;
+}
+
+.param {
+  padding: 20rpx 25rpx;
+}
+
+.param-list {
+  border-top: none;
+  border: 1px solid #ededed;
+}
+
+.l-item {
+  display: flex;
+  border-top: 1px solid #ededed;
+}
+
+.l-item:first-child {
+  border-top: none 
+}
+
+.l-item > view{
+  flex: 1;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  text-align: center
+}
+
+.l-item > view:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  border-right: 1px solid #ededed;
+}
+ 
+.remark-info {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6rpx 24rpx;
+  height: 120rpx;
+}
+
+.p-count {
+  border: none
+}
+
+.bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  z-index: 3
+}
+
+.b-bottom {
+  height: 98rpx;
+  display: flex;
+}
+
+.b-bottom > button {
+  line-height: 98rpx;
+}
+
+.bb-left {
+  width: 98rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-top: 1px solid #e6e6e6
+}
+
+.bb-con {
+  width: 326rpx;
+  color: #333;
+  background: #e6e6e6;
+}
+
+.bb-right {
+  flex: 1
+}
+
+.ps-item.active, .s-item.active {
+  position: relative;
+  color: white;
+  background: #a71c20;
+}
+
+.ps-item.active::after{
+  position: absolute;
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: -90rpx;
+  content: '';
+  display: block;
+  width:0;
+  height:0; 
+  margin: auto;
+  border-top: 6px solid #A71C20;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+.nobackground {
+  background: none
+}
+
+
+.cusinput > input {
+  box-sizing: border-box;
+  margin-left: 36rpx;
+  width: 620rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+  background: #f5f5f5
+}
+
+.cusscope {
+  margin-top: 20rpx;
+  display: flex;
+  color: #A71C20;
+  margin-left: 36rpx;
+  margin-bottom: 30rpx;
+}
+
+.cusscope-tit {
+  min-width: 118px
+}
+
+.cusscope-right {
+  display: flex;
+  margin-left: 10rpx;
+}
+
+.cusscope-right > view {
+  margin-right: 20rpx;
+}

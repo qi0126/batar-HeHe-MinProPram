@@ -1,0 +1,186 @@
+<view class='index'>
+    <!-- 搜索 -->
+    <top-seacrch bind:goSearchPage="goSearchPage"></top-seacrch>
+    <!-- 轮播 -->
+    <swiper class="swiperWrap" indicator-dots="true" wx:if='{{imgUrls.length > 0}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}" indicator-active-color="{{colorActive}}" bindchange="swiperFun">
+        <block wx:for="{{imgUrls}}" wx:key="id">
+            <swiper-item>
+                <!-- <video class="slide-video" autoplay="{{index === 0}}" muted vslide-gesture   src="http://192.168.16.103:9999//group1/M00/01/E0/wKgQZ133TTeAd48PAATcARsdfxQ271.mp4"></video> -->
+                <!-- <video class="slide-video" autoplay="{{index === 0}}" muted vslide-gesture   src="http://hehe.batar.cn/hehe001.mp4"></video> -->
+                <view wx:if="{{item.type === 2}}">
+                    <video class="slide-video" id='video{{index}}' autoplay="{{index === 0}}" muted show-mute-btn vslide-gesture src="{{$img + item.hrefUrl}}"></video>
+                </view>
+                <view wx:else>
+                    <image src="{{$img + item.imgUrl}}" class="slide-image" mode='widthFix' data-item='{{item}}' data-index='{{index}}' catchtap='bannerClick' />
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    
+    <!-- 消息提示 -->
+    <view class="news">
+        <i class="font_family icon-tips horn"></i>
+        <view class="newsDes">
+            <view class="newTitle">最新讯息</view>
+            <view class="newInfoWrap">
+                <view class="newInfo" wx:if="{{newMsg}}" id="newInfo" style="transform: translateX({{newInfoTranslate}}px); transition-duration: {{newInfoTime}}s">{{newMsg}}
+                    <text style="margin-left: 20rpx;">{{newMsg}}</text>
+                </view>
+                <view class="no_newInfo newInfo" wx:else>暂无消息通知</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 预告 -->
+    <view>
+        <scroll-view class='recom-list' scroll-x='true' style="width: 750rpx;">
+            <view class='recom-item-wrap'>
+                <view class='recom-items' data-item='{{item}}' data-index='{{index}}' wx:for="{{advanceNoticeList}}" wx:key='id' bindtap="gowxParseDetail">
+                    <image class='recom-img' src='{{$img+item.imgUrl}}' mode='widthFix'></image>
+                    <view class='recom-items-title'>{{item.title}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <!-- 产品分类 -->
+    <view class="productWrap">
+        <view class="titleWrap">
+            <view class="EN">CLASSIFICATION</view>
+            <view class="CH">产品分类</view>
+        </view>
+        <view class="productContent">
+            <scroll-view class='series-list' scroll-x='true' style="width: 750rpx;">
+                <view class='series-item-wrap'>
+                    <view class='series-items' data-item='{{item}}' data-index='{{index}}' wx:for="{{seriesList}}" wx:key='id' bindtap='seriesItemClick'>
+                        <view class='series-img'>
+                            <image src='{{$img+item.imgUrl}}' mode='widthFix'></image>
+                        </view>
+                        <text class="series-des" catchtap="moreFun">{{item.name}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+
+    <!-- 主题系列 -->
+    <view class="themeWrap">
+        <view class="titleWrap">
+            <view class="EN">RECOMMENDED</view>
+            <view class="CH">主题推荐</view>
+        </view>
+
+        <view class="themeContentWrap">
+            <swiper class="themeSwiperWrap" indicator-dots="true" wx:if='{{imgUrls.length > 0}}' autoplay="{{titAutoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}" indicator-active-color="{{colorActive}}">
+                <block wx:for="{{themeList}}" wx:key="id">
+                    <swiper-item>
+                        <image src="{{$img+item.imgUrl}}" class="theme-image" mode='widthFix' data-item='{{item}}' data-index='{{index}}' catchtap='themeClick' />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+    </view>
+
+    <!-- 品牌资讯 -->
+    <view class="brandWrap">
+        <view class="titleWrap">
+            <view class="EN">BRAND NEWS</view>
+            <view class="CH">品牌资讯</view>
+        </view>
+
+        <!-- 资讯列表 -->
+        <view class="brandList">
+            <view class="li" wx:for="{{brandReferList}}" data-item="{{item}}" wx:key="id" catchtap="goBrandRefer">
+                <view class="leftWrap">
+                    <image src="{{$img + item.imgUrl}}" mode="widthFix"></image>
+                </view>
+
+                <view class="rightWrap">
+                    <view class="title">{{item.title}}</view>
+                    <view class="des">{{item.referTitle}}</view>
+                    <view class="time">{{item.createTime}}发布</view>
+                </view>
+            </view>
+
+            <view class="lastLi" bindtap="goBrandReferMore">更多资讯
+                <i class="font_family icon-ziyuan2 arrow"></i>
+            </view>
+        </view>
+
+    </view>
+
+    <!-- 百泰学堂 -->
+    <view class="school">
+        <view class="titleWrap">
+            <view class="EN">BATAR CLASSROOM</view>
+            <view class="CH">百泰学堂</view>
+        </view>
+
+        <!-- 选择区块 -->
+        <view class="header">
+            <view class="imgWrap">
+                <view class="imgBlock" data-index="1" bindtap="selectClassroom">
+                    <image src="/images/index/yellowBG.png" class="headerImg {{schoolIndex == '1'?'active':''}}"></image>
+                    <view class="infoTitle infoActive">资讯课堂</view>
+                </view>
+
+                <view class="imgBlock" data-index="2" bindtap="selectClassroom">
+                    <image src="/images/index/blueBG.png" class="headerImg" class="headerImg {{schoolIndex == '2'?'active':''}}"></image>
+                    <view class="infoTitle">知识课堂</view>
+                </view>
+            </view>
+
+            <view class="iconWrap">
+                <view class="iconBlock">
+                    <text class="font_family icon-sanjiaoxing" style="opacity: {{ schoolIndex === '1' ? 1 : 0}}"></text>
+                </view>
+                <view class="iconBlock">
+                    <text class="font_family icon-sanjiaoxing" style="opacity: {{ schoolIndex === '2' ? 1 : 0}}"></text>
+                </view>
+            </view>
+        </view>
+
+        <!-- 学堂列表 -->
+        <view class="liWrap">
+
+            <!--资讯课堂  -->
+            <view class="infoWrap" style="display: {{ schoolIndex === '1' ? 'block' : 'none'}}">
+                <view class="schoolTitle">热门资讯课堂</view>
+                <view>
+                    <view wx:for="{{consultClassroomList}}" data-item="{{item}}" wx:key="id">
+                        <infor-card info="{{item}}" data-index="{{index}}" bind:goDiscuss="goDiscuss" bind:like="consultClassroomLike" bind:goDetail="goConsultClassroomDetail"></infor-card>
+                    </view> 
+                    <view class="lastLi" style="margin-right: 18rpx" bindtap="moreClassroom">更多课程
+                        <i class="font_family icon-ziyuan2 arrow"></i>
+                    </view>
+                </view>
+            </view>
+
+            <!-- 知识课堂 -->
+            <view class="knowledgeWrap" style="display: {{ schoolIndex === '2' ? 'block' : 'none'}}">
+                <view class="schoolTitle">知识课堂</view>
+                <view>
+                    <view class="li" wx:for="{{kowledgeClassroomList}}" data-item="{{item}}" wx:key="id">
+                        <view class="des">{{item.title}}</view>
+                        <view class="preview" data-item="{{item}}" catchtap="previewDocBefore">预览</view>
+                    </view>
+                    <view class="lastLi"   bindtap="moreKnowledge">更多课堂
+                        <i class="font_family icon-ziyuan2 arrow"></i>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="touchedImg" wx:if="{{isTouchedImg}}">
+        <view class="touchedImg-txt">
+            <view class="font_family icon-Group1 touchedImg_left-txt"></view>
+        </view>
+        <view class="btn btn-default touchedImg-btn" catchtap="hideTouchedImg">
+            <view class="font_family icon-Group touchedImg-btn_txt"></view>
+        </view>
+    </view>
+
+</view>

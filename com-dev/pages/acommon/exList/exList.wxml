@@ -1,0 +1,13 @@
+<view class='list'>
+  <view class='item {{item.checked ? "on" : ""}}' wx:for='{{list}}' data-index='{{index}}' catchtap='clickItem'>
+    <view class='tit'>{{item.exhibitName}}</view>
+    <view class='info'>
+      <view>
+        <text class='left'>可挑货重量：</text>{{item.totalWeight}}g
+      </view>
+      <view>
+        <text class='left'>活动时间：</text> {{item.startTime}} 至 {{item.endTime}}
+      </view>
+    </view>
+  </view>
+</view>

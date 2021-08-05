@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "品牌",
+  "usingComponents": {
+    "tabs": "/pages/acommon/tabs/tabs",
+    "wxParseComp": "/pages/acommon/wxParseComp/wxParseComp",
+    "brandInforBlock": "/pages/acommon/brandInforBlock/brandInforBlock"
+  }
+}

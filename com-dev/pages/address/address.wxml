@@ -1,0 +1,46 @@
+  
+<view wx:if="{{list.length > 0}}">
+  <view class='listWrap' wx:for="{{list}}" wx:key="id">
+      <!-- 上部 -->
+      <view class="listTop" data-item='{{item}}' data-index='{{index}}' catchtap='backOrderDetail'>
+         <view class="nameTele">
+             <view class="name">{{item.receiver}}</view>
+             <view class="tele">{{item.telephone}}</view>
+         </view>
+         <view class="detailsAddress">{{item.province}} {{item.city}} {{item.district}} {{item.address}}</view>
+      </view>
+      <!-- 下部 -->
+      <view class="listBottom">
+       
+        <view class="left" data-item='{{item}}' data-index='{{index}}' catchtap="setDefault">
+          <image mode='widthFix' src='{{item.isDefault === "Y"?imgStatus.select:imgStatus.noSelect}}' style='width: 28rpx'></image>
+          <view class="default">设为默认</view>
+        </view>
+        <view class="right">
+          <view catchtap='editAddress' data-item='{{item}}' class="editImgWrap">
+              <image class="editImg" mode='widthFix' src='/images/me/edit-icon.png' style='width: 28rpx'></image>
+          </view>
+
+          <view catchtap="deleAddress" class="deleImgWrap" data-item='{{item}}' data-index='{{index}}'>
+              <image class="deleImg" mode='widthFix' src='/images/me/dele-icon.png' style='width: 28rpx'></image>
+          </view>
+
+        </view>
+       
+      </view>
+  </view>
+
+
+</view>
+
+  <view class='nothing' wx:else>
+    <image src='/images/me/img-noaddr.png' mode='widthFix' style='width: 125rpx'></image>
+    <view>您还没有收获地址</view>
+  </view>
+
+  <view class='bottom'>
+    <button class='btn btn-default' bindtap='addAddress'>
+      +
+      <text style='margin-left: 10rpx;'>创建地址</text>
+    </button>
+  </view>

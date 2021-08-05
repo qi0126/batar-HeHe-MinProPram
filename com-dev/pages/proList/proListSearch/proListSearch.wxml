@@ -1,0 +1,22 @@
+<view class='classifly'>
+
+    <!-- 分类 -->
+    <view class="classiflyUL">
+      <!-- 区块 -->
+      <view class="classiflyLi" wx:key='index' wx:for="{{classList}}" wx:if='{{item}}'>
+          <view class="classiflyTitle">{{item.tit}}</view>
+          <view class="classiflyItemWrap">
+             <view class='classiflyItem {{it.checked && "activity"}}' data-index='{{index}}' data-item='{{item}}' wx:for="{{item.items}}" wx:for-item="it" wx:for-index="ix" wx:key='code' data-ix='{{ix}}' data-it='{{it}}' bindtap='itemClick'>{{it.value}}</view>
+          </view>
+      </view>
+
+      <!-- 按钮 -->
+      <view class="btnWrap">
+          <view class="btnReset" catchtap="resetFun">重置</view>
+          <view class="btnConfirm" catchtap='goIndex'>确定</view>
+      </view>
+
+    </view>
+
+
+</view>

@@ -1,0 +1,5 @@
+<view class='layer' hidden='{{!show}}' catchtap='hide'>
+  <view class='layer-con' catchtap='normal'>
+   <slot></slot>
+  </view>
+</view>

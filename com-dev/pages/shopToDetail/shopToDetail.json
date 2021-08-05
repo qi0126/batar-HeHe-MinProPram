@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "batar-prop": "/pages/acommon/prop/prop",
+    "batar-blank": "/pages/acommon/blank/blank",
+    "batar-propShow": "/pages/acommon/propShow/propShow",
+    "batar-propEx": "/pages/acommon/propExhibi/propExhibi"
+  }
+}

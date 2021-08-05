@@ -1,0 +1,671 @@
+
+@import '/styles/utils.wxss';
+
+.batar-order {
+    background: #fff
+}
+
+.tit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88rpx;
+    background: #fff;
+}
+
+.tit-tit {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e86800;
+    border-radius: 4rpx;
+}
+
+.tit-tit > view {
+    width: 200rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color: #e86800;
+}
+
+.tit-tit > view.active {
+    color: #fff;
+    background: #e86800;
+}
+
+.tit > text {
+    position: absolute;
+    right: 40rpx;
+}
+
+.txtOne {
+    /* font-size: 22rpx; */
+    margin-left: 10rpx;
+}
+
+.di-top {
+    /* margin-top: 10rpx; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.def-list-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nothing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 256rpx;
+}
+
+.no-info {
+    color: #b3b3b3;
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+}
+
+.nothing .btn {
+    min-width: 272rpx;
+    line-height: 78rpx;
+    height: 78rpx;
+    border: none;
+    color: #fff;
+    background: #000;
+}
+
+.bottom {
+    background: #fff;
+    border-top: 1px solid #f5f5f5;
+}
+
+/*购物车数量 begin */
+
+.b-top {
+    display: flex;
+    box-sizing: border-box;
+    height: 110rpx;
+    background: #fff;
+    padding-top: 25rpx;
+    /* line-height:110rpx; */
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.b-top > view {
+    flex: 1;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.b-top > view view:first-child {
+    margin-bottom: 20rpx;
+    text-indent: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.b-top > view view {
+    font-size: 22rpx;
+    color: #e86800;
+}
+
+/*购物车数量 end */
+
+.b-bottom {
+    display: flex;
+    height: 98rpx;
+    background: #333;
+    line-height: 98rpx;
+    padding-left: 27rpx;
+}
+
+.bt-checkbox {
+    width: 550rpx;
+    display: flex;
+    align-items: center;
+}
+
+.bt-checkbox label {
+    display: flex;
+    align-items: center;
+}
+
+.bt-checkbox image {
+    margin-left: 24rpx;
+    margin-right: 10rpx;
+}
+
+#createorder {
+    width: 236rpx;
+    margin-right: 0;
+    line-height: 98rpx;
+    font-size: 28rpx;
+    background: #e1751d;
+    color: #fff;
+    font-weight: bold;
+}
+
+.txtTwo {
+    color: #fff;
+    font-size: 22rpx;
+    /* font-weight: bold; */
+}
+
+.txtTwoS {
+    color: #fff;
+    /* font-size:30rpx; */
+}
+
+/* 客制单table  */
+
+.guest-option {
+    padding: 20rpx 25rpx;
+    background: #fafafa;
+}
+
+.guo-table {
+    border: 1px solid #e6e6e6;
+}
+
+.guo-th {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 24rpx;
+    font-size: 18rpx;
+    height: 45rpx;
+    color: #999;
+    background: #fafafa;
+}
+
+.guo-th > view {
+    width: 120rpx;
+    text-align: center;
+}
+
+.guo-th > image {
+    position: absolute;
+    right: 20rpx;
+}
+
+.guo-tr {
+    display: flex;
+    padding: 0 20rpx;
+    height: 60rpx;
+    align-items: center;
+    border-top: 1px solid #e6e6e6;
+    background: #fff;
+}
+
+.guo-tr > view {
+    min-width: 120rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.guo-tr > .guo-tr-rmark {
+    display: flex;
+    align-items: center;
+    color: #e86800;
+    font-size: 20rpx;
+    min-width: 60rpx;
+}
+
+.guo-tr-rmark > image {
+    margin-left: 4rpx;
+}
+
+.guo-tr-markinfo {
+    box-sizing: border-box;
+    padding: 10rpx 24rpx;
+    width: 100%;
+    height: 140rpx;
+    font-size: 20rpx;
+    background: #f5f5f5;
+    border-top: 1px solid #e6e6e6;
+}
+
+.siti-info {
+    margin-top: 10rpx;
+    align-self: flex-start;
+}
+
+.siti-info .item-detail {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.dit-info {
+    flex: 1;
+}
+
+/*侧滑样式  */
+
+.touch-item {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #f5f5f5;
+    background: #fff;
+}
+
+.content {
+    box-sizing: border-box;
+    display: flex;
+    transition: all 0.4s;
+    transform: translateX(140rpx);
+    margin-left: -140rpx;
+}
+
+.del {
+    background-color: #e86800;
+    width: 140rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(140rpx);
+    transition: all 0.4s;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.scroll-class {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 样式覆盖 */
+
+.batar-order .defb-tit > view {
+    flex: 1;
+    font-size: 24rpx;
+    color: #e86800;
+    height: 62rpx;
+    line-height: 62rpx;
+}
+
+.batar-order .defb-item > view {
+    flex: 1;
+}
+
+/* 改版 */
+
+.cartcatelist {
+    /* margin-top: 10rpx; */
+    padding-left: 20rpx;
+    padding-right: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 96rpx;
+}
+
+.ccl-left {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+}
+
+.ccll-name {
+    margin: 0 20rpx;
+    color: #000;
+    font-size: 30rpx;
+    /* font-weight: bold; */
+}
+
+.ccl-right {
+    display: flex;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #e86800;
+}
+
+.ccl-right > view {
+    margin-left: 40rpx;
+}
+
+.ditid-slides {
+    color: #333;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 22rpx;
+    margin-top: 20rpx;
+}
+
+.defbb-item {
+}
+
+.defbbib {
+    display: flex;
+    align-items: center;
+    font-size: 20rpx;
+    border-top: 1px solid #ededed;
+}
+
+.defbbib > .defbbib-left {
+    padding-right: 20rpx;
+    box-sizing: border-box;
+    text-align: right;
+    line-height: 50rpx;
+    width: 172rpx;
+    color: #666;
+    background: #f5f5f5;
+    border-right: 1px solid #ededed;
+}
+
+.defbbib > .defbbi-bright {
+    padding-left: 40rpx;
+    line-height: 50rpx;
+    flex: 1;
+    background: #fff;
+}
+
+.diti-label {
+    display: flex;
+    width: 100%;
+}
+
+.ditit-left {
+    font-size: 20rpx;
+}
+
+.ditit-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.ditit-right {
+    text-align: left;
+    padding-right: 140rpx;
+    font-size: 20rpx;
+    color: #666;
+}
+
+.ditit-right > view {
+    line-height: 1.6;
+}
+
+.item-tit {
+    font-size: 26rpx;
+}
+
+.priceOne {
+    font-weight: normal;
+    color: #e86800;
+}
+
+.item-pro {
+   width: 160rpx;
+   height: 140rpx;
+   overflow: hidden
+}
+
+/* 购物车加减 */
+
+/* 输入框 */
+
+.h-hand {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 176rpx;
+    height: 45rpx;
+    border: 1px solid #999;
+    overflow: hidden;
+}
+
+.h-hand > image {
+    padding: 20rpx 15rpx;
+}
+
+.hhad-decrease {
+    display: flex;
+    align-items: center;
+    width: 50rpx;
+}
+
+.hhand-input {
+    box-sizing: border-box;
+    font-size: 28rpx;
+    width: 80rpx;
+    height: 48rpx;
+    text-align: center;
+    color: #333;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.hhand-increase {
+    display: flex;
+    align-items: center;
+    width: 50rpx;
+}
+
+.diti-hh {
+    margin-top: 30rpx;
+}
+
+.flexss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.defb-item, .defb-tit {
+    /* height: 82rpx;
+    line-height: 82rpx; */
+}
+
+.allCheckStyle {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.txtTwoPrice {
+    font-size: 32rpx;
+    margin-left: 22rpx;
+}
+
+.txtOneWeight {
+    font-size: 32rpx;
+    margin-left: 22rpx;
+}
+
+/* 备注信息 */
+
+.remarksWrap {
+    padding: 10rpx 36rpx;
+    display: flex;
+    background: #fff;
+    /* border-top: 1rpx solid#e6e6e6; */
+}
+
+.remarkTitel {
+    font-size: 24rpx;
+    color: #333;
+    width: 140rpx;
+}
+
+.remarkCont {
+    font-size: 24rpx;
+    color: rgba(102, 102, 102, 1);
+    line-height: 36rpx;
+}
+
+.axu_txt {
+    color: #EC812B
+}
+
+.floatRight-img {
+    margin-left: 10rpx;
+    width: 20rpx;
+}
+
+/* 弹窗 */
+.candotit {
+  padding: 0 40rpx;
+  padding-top: 50rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.candotit-tit {
+  margin-bottom: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+
+/* 辅件样式 */
+.axu-wrap {
+   padding-left: 90rpx;
+}
+
+.axu-txt-tag {
+    font-size: 20rpx;
+    color:#999
+}
+
+.axu {
+    margin-top: 12rpx;
+    display: flex;
+}
+
+.axu-cl {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.axu-cr {
+    color: #333;
+    font-size: 22rpx;
+}
+
+.axu-img {
+    width: 180rpx;
+    height: 140rpx;
+    overflow: hidden;
+}
+
+.axu-img > image {
+    width: 180rpx;
+}
+
+.axu-content {
+    flex: 1;
+    margin-left: 30rpx;
+    padding-top: 6rpx;
+}
+
+.axu-checkbox {
+    margin-right: 28rpx;
+    display: flex;
+    align-items: center
+}
+
+.axu-checkbox > image {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+ /*  */
+.batar-order .item-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  background: #fff;
+  padding-bottom: 16rpx;
+
+}
+.batar-order .item-checkbox {
+  padding: 48rpx 0;
+  padding-right: 10rpx;
+}
+
+.batar-order .item-pro {
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  margin-right: 25rpx;
+}
+
+.batar-order .item-code {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.batar-order .item-detail {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+
+.batar-order .ditid-arrows {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+}
+
+.batar-order .itemw-left {
+  display: flex;
+}
+
+
+.batar-order .def-bottom {
+  padding: 20rpx 25rpx;
+  /* background: #fafafa; */
+}
+
+.batar-order .defb-info {
+  border: 1px solid #e6e6e6;
+}
+
+.batar-order .defb-tit {
+  display: flex;
+  line-height: 48rpx;
+  color: #E86800;
+  font-size: 24rpx;
+}
+
+.batar-order .defb-tit > view {
+  flex:1;
+  text-align: center;
+}
+
+.batar-order .defb-item {
+  display: flex;
+  align-items: center;
+  line-height: 60rpx;
+  border-top: 1px solid #e6e6e6;
+  color: #666;
+  font-size: 24rpx;
+  background: #fff;
+  height:60rpx;
+}
+.batar-order .defb-item.defb-item-checked {
+    background: #fafafa
+  }
+  
+.batar-order .defb-item.noline {
+   line-height: 1.2; 
+}
+
+.batar-order .defb-item > view {
+  flex:1;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+page{
+   background: #F9F9F9;
+}
+.fixed{
+  /* position:fixed; */
+  display: flex;
+  flex-flow: column;
+
+}
+.tabs-contaienr{
+  margin-top:80rpx;
+}
+
+.brandWrap .content{
+
+}

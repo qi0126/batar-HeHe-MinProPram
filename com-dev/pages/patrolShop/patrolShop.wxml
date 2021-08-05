@@ -1,0 +1,43 @@
+<view class="patrolShopWrap">
+    <view class="nav">
+        <view class="navLi {{currentIndex === 0 && 'active'}}" data-index="0" data-orderstatus="0" catchtap="navClick">待反馈</view>
+        <view class="navLi {{currentIndex === 1 && 'active'}}" data-index="1" data-orderstatus="1" catchtap="navClick">待回复</view>
+        <view class="navLi {{currentIndex === 2 && 'active'}}" data-index="2" data-orderstatus="2" catchtap="navClick">已回复</view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="main">
+        <!-- 待反馈 -->
+        <view wx:if="{{currentIndex === 0}}">
+            <view wx:for="{{list}}" wx:key="id">
+                <patrolShopCard info="{{item}}"></patrolShopCard>
+                <view style="height: 24rpx"></view>
+            </view>
+        </view>
+
+        <!-- 待回复 -->
+        <view wx:if="{{currentIndex === 1}}">
+            <view wx:for="{{list}}" wx:key="id">
+                <patrolShopCard info="{{item}}"></patrolShopCard>
+                <patrolShopFeedback info="{{item}}"></patrolShopFeedback>
+                <patrolShopReply info="{{item}}"></patrolShopReply>
+                <view style="height: 24rpx"></view>
+            </view>
+            
+        </view>
+
+        <!-- 已回复 -->
+
+        <view wx:if="{{currentIndex === 2}}">
+            <view wx:for="{{list}}"  wx:key="id">
+                <patrolShopCard info="{{item}}"></patrolShopCard>
+                <patrolShopFeedback info="{{item}}"></patrolShopFeedback>
+                <patrolShopReply info="{{item}}"></patrolShopReply>
+                <view style="height: 24rpx"></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="noData" wx:if="{{list.length === 0}}">~没有更多内容了~</view>
+
+</view> 

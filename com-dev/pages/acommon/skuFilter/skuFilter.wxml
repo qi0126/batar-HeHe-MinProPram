@@ -1,0 +1,121 @@
+<view class='p-info'>
+
+    <view class='size-tit'>成色</view>
+    <scroll-view scroll-x='true' class='batar-scoll-listw p-sizescoll {{proObj.conditiList.length <= 3 && "nobackground"}}'>
+        <view class='batar-scoll-list p-size'>
+            <view class='batar-scoll-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.conditiList}}' wx:key='txt' data-tit='conditList' data-index='{{index}}' data-item='{{item}}' bindtap='conditiClick' style="height:65rpx;line-height:65rpx;">
+                {{item.txt!='997'?item.txt:'足金'}}
+            </view>
+        </view>
+    </scroll-view>
+
+    <view wx:if="{{proObj.effectCodeList.length > 0}}">
+        <view class='size-tit'>表面工艺</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.effectCodeList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='effeClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{proObj.carCodeList.length > 0}}">
+        <view class='size-tit'>车花描述</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.carCodeList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='carClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{proObj.diameterList.length > 0}}">
+        <view class='size-tit'>内径(cm)</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.diameterList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='diameterClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view wx:if="{{proObj.faceWidthList.length > 0}}">
+        <view class='size-tit'>面宽(mm)</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.faceWidthList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='faceWidthClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{proObj.ringhandList.length > 0}}">
+        <view class='size-tit'>手寸(#)</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.ringhandList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='ringhandClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{proObj.lengthList.length > 0}}">
+        <view class='size-tit'>链长(cm)</view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.lengthList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='lengthClick' style="height:65rpx;line-height:65rpx;">
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- sku克重 -->
+    <view wx:if="{{proObj.weightList.length > 0}}">
+        <view class='size-tit'>克重(g)
+            <span class="txtOrange" wx:if="{{weightSE.length > 0}}">*克重范围{{weightSE}}</span>
+        </view>
+        <view class='batar-listw p-sizescoll'>
+            <view class='p-size'>
+                <view class='batar-list-item s-item {{item.checked && "active"}} {{item.disabled&&"no-sele"}}' wx:for='{{proObj.weightList}}' wx:key='txt' data-index='{{index}}' data-item='{{item}}' bindtap='weightClick'>
+                    {{item.txt}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 产品辅件 -->
+    <view class="axu-txt size-tit" wx:if="{{proObj.auxiliariesList.length > 0}}">
+        产品辅件
+        <text class="axu-txt-tag">非绑定产品的辅件可选择性勾选</text>
+    </view>
+
+    <!-- 辅件列表 -->
+    <view wx:if="{{proObj.auxiliariesList.length > 0}}" >
+        <view class="axu" wx:for="{{proObj.auxiliariesList}}">
+            <view class="axu-img">
+                <image src="{{$img}}{{item.pic[0]}}" mode="widthFix"></image>
+            </view>
+            <view class="axu-content">
+                <view>{{item.name}}</view>
+                <!-- <view class="axu-cl ">单位：
+                <text class="axu-cr">111</text> </view>
+            <view class="axu-content">吉祥红绳：
+                <text>111</text>
+            </view> -->
+            </view>
+            <view wx:if="{{item.type === 2}}" class="axu-checkbox" data-item="{{item}}" data-index="{{index}}" catchtap="changeAux">
+                <image wx:if="{{item.checked}}" src="/images/shop/icon-on.png"></image>
+                <image wx:else src="/images/shop/icon-not.png"></image>
+            </view>
+        </view>
+    </view>
+
+</view>

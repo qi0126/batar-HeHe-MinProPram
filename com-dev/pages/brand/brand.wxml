@@ -1,0 +1,15 @@
+
+<view class="brandWrap">
+   <tabs class="fixed" menuList="{{menuList}}" bind:clickMenu="clickMenu" count="4" tabScroll="{{tabScroll}}" currentTab="{{currentTab}}"></tabs>
+   <view class="tabs-contaienr">
+      <!-- 模板 --> 
+       <view wx:for="{{menuList}}" wx:key="index" hidden="{{currentData.name !== item.name || currentData.name === '品牌资讯'}}">
+          <wxParseComp wxParseData="{{item}}"></wxParseComp>
+       </view>
+      <view hidden="{{currentData.name !== '品牌资讯'}}">
+        <brandInforBlock id="brandInfor"></brandInforBlock>
+      </view>
+    </view>
+
+</view>
+

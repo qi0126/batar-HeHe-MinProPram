@@ -1,0 +1,6 @@
+<view class="schoolSearchWrap">
+    <view class="schoolSearch" bindtap="goSerach">
+        <text  class="font_family icon-xinbaniconshangchuan- searchIcon"></text>
+        <view class="searchDes">搜索</view>
+    </view>
+</view>

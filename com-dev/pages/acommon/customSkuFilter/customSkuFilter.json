@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "batar-propDef": "/pages/acommon/propDef/propDef",
+    "batar-propShow": "/pages/acommon/propShow/propShow"
+  }
+}

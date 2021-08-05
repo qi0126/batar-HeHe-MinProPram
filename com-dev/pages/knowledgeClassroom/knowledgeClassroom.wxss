@@ -1,0 +1,129 @@
+
+
+/* 筛选条件 */
+.screenWrap{
+  padding: 27rpx 23rpx 0 23rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.screenWrap .li{
+  height:50rpx;
+  border-radius: 2rpx;
+  color: #666;
+  border: 1px solid #bdbdbd;
+  padding: 9rpx 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  margin-bottom: 17rpx;
+}
+
+.screenWrap .active{
+   border-color: rgba(225,103,29,1);
+   color: rgba(225,103,29,1) 
+}
+
+/* 搜索结果 */
+.resultWrap{
+  padding: 62rpx 18rpx 0rpx 16rpx;
+}
+
+.resultTitle{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+.resultLi{
+  height:129rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 4rpx 0rpx rgba(0,22,69,0.08);
+  border-radius:8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 20rpx 0rpx 27rpx;
+  margin-top: 14rpx;
+}
+
+.resultLi .des{
+    width: 476rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+ 
+.resultLi .preview{
+  width:110rpx;
+  height:44rpx;
+  background:rgba(225,103,29,1);
+  border-radius:2rpx;
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 无数据 */
+.noData{
+  margin-top: 110rpx;
+  margin-bottom: 67rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(149,149,149,1);
+  text-align: center;
+  
+}
+
+
+.touchedImg {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.icon-Group {
+
+}
+
+.touchedImg-txt {
+
+}
+
+.touchedImg_left-txt {
+    margin-left:20rpx;
+    font-size: 122rpx;
+    color: #fff;
+}
+
+.touchedImg-btn {
+    margin: 0 auto;
+    margin-top: 100rpx;
+    text-align: center;
+    width: 240rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 80rpx;
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+.touchedImg-btn_txt {
+    font-size: 80rpx;
+    color: #fff;
+}
